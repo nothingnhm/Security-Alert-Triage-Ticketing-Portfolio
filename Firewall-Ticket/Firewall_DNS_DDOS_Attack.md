@@ -192,3 +192,26 @@ SOC investigated firewall alert **CS-0188 — DNS DDOS Attack**. Logs show inbou
 Splunk review confirmed **269 events** matching the DNS DDoS threat signature. All observed events were **blocked** by the firewall. No evidence from the provided logs indicates successful traffic delivery, internal host compromise, or service impact.
 
 Assessment: **Suspicious inbound DNS DDoS activity blocked by firewall. No immediate action required at this time. Continue monitoring and escalate if repeated activity, allowed traffic, multiple source IPs, or DNS server impact is observed.**
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
