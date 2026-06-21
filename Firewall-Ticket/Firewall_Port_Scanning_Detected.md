@@ -4,7 +4,7 @@
 
 | Field            | Details                                            |
 | ---------------- | -------------------------------------------------- |
-| Ticket ID        | CS-0193                                            |
+| Ticket ID        | CS-03                                              |
 | Alert Name       | Firewall: Port Scanning Detected                   |
 | Ticket Status    | Closed                                             |
 | Ticket Priority  | High                                               |
@@ -120,7 +120,7 @@ This is assessed as a **blocked external reconnaissance attempt**, not a confirm
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0193 — Firewall: Port Scanning Detected**. Inbound TCP traffic from external source IP **178.217.170.36** to internal destination IP **10.0.2.28** was detected as **Port Scanning detected**. Splunk review confirmed **4,820 blocked events** with **4,562 unique source ports**. No allowed traffic, successful connection, host compromise, or service impact was observed in the provided evidence. Ticket closed as **True Positive — Blocked**, with continued monitoring recommended for recurrence or allowed traffic.
+SOC investigated ticket **CS-03— Firewall: Port Scanning Detected**. Inbound TCP traffic from external source IP **178.217.170.36** to internal destination IP **10.0.2.28** was detected as **Port Scanning detected**. Splunk review confirmed **4,820 blocked events** with **4,562 unique source ports**. No allowed traffic, successful connection, host compromise, or service impact was observed in the provided evidence. Ticket closed as **True Positive — Blocked**, with continued monitoring recommended for recurrence or allowed traffic.
 
 ## Skills Demonstrated
 
