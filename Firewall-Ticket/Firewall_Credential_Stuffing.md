@@ -4,7 +4,7 @@
 
 | Field                | Details                              |
 | -------------------- | ------------------------------------ |
-| Ticket ID            | CS-0184                              |
+| Ticket ID            | CS-010                               |
 | Alert Name           | Firewall: Credential Stuffing        |
 | Ticket Status        | Not Provided                         |
 | Initial Severity     | Low                                  |
