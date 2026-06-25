@@ -9,8 +9,7 @@
 | Ticket Status    | Closed                                                         |
 | Priority / SLA   | Normal / High                                                  |
 | Created Date     | 3/2/25 7:44 PM                                                 |
-| Closed By        | sushanth P                                                     |
-| Close Date       | 6/20/26 9:07 AM                                                |
+| Closed By        | Ananda Das                                                     |
 | Analyst Decision | **Needs Escalation — Allowed Inbound SMB Brute Force Attempt** |
 
 ## Executive Summary
