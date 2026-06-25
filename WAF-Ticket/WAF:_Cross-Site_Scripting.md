@@ -29,7 +29,7 @@ No successful XSS execution, session theft, user compromise, application comprom
 | Source Port           | 43544                                                                                                    |
 | Destination IP        | 10.0.2.32                                                                                                |
 | Destination Port      | 443                                                                                                      |
-| Site Name             | it.cybersecxperts.com                                                                                    |
+| Site Name             | it.abc.com                                                                                               |
 | Initial URL           | /admin                                                                                                   |
 | HTTP Method           | GET                                                                                                      |
 | Threat Name           | Cross-Site Scripting                                                                                     |
