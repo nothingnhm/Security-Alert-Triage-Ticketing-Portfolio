@@ -10,7 +10,6 @@
 | Priority / SLA   | Normal / Medium                                    |
 | Created Date     | 3/2/25 7:45 PM                                     |
 | Closed By        | ananda das                                         |
-| Close Date       | 6/23/26 12:22 AM                                   |
 | Analyst Decision | **True Positive — Blocked Port Scanning Activity** |
 
 ## Executive Summary
