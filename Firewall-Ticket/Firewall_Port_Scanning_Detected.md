@@ -12,7 +12,6 @@
 | SLA Plan         | Medium                                             |
 | Created Date     | 3/2/25 7:45 PM                                     |
 | Closed By        | ananda das                                         |
-| Close Date       | 6/21/26 2:51 PM                                    |
 | Analyst Decision | **True Positive — Blocked Port Scanning Activity** |
 
 ## Executive Summary
