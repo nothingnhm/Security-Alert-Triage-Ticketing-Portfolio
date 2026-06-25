@@ -2,143 +2,136 @@
 
 ## Ticket Overview
 
-| Field                | Details                                         |
-| -------------------- | ----------------------------------------------- |
-| Ticket ID            | CS-012                                          |
-| Alert Name           | Firewall: VPN Login GeoLocation Detected        |
-| Ticket Status        | Not Provided                                    |
-| Priority / SLA       | Not Provided                                    |
-| Recommended Severity | Medium                                          |
-| Analyst Decision     | **Needs Escalation — User Validation Required** |
+| Field            | Details                                   |
+| ---------------- | ----------------------------------------- |
+| Ticket ID        | CS-0291                                   |
+| Alert Name       | IPS: SSH Connection from Unusual Location |
+| Ticket Status    | Closed                                    |
+| Priority / SLA   | Normal / Critical                         |
+| Created Date     | 4/25/25 3:52 PM                           |
+| Closed By        | ananda das                                |
+| Analyst Decision | **True Positive — Prevented by IPS**      |
 
 ## Executive Summary
 
-A firewall alert was triggered for **VPN Login GeoLocation Detected** involving inbound VPN traffic from external source IP **201.172.173.50** to internal VPN server **10.0.2.12 / IvantiVPN01** on **4500/UDP**.
+An IPS alert was triggered for **SSH Connection from Unusual Location** involving inbound SSH traffic from external source IP **210.209.137.144** to internal destination **10.0.11.11 / LinFDWebServer07**.
 
-Firewall logs show the traffic was **allowed**. VPN logs show authentication was initiated for user **priya.verma**, using **Password** authentication from an **iOS / iPhone 14 Pro** device, with MFA status **Prompted**. No successful VPN login, MFA approval, internal access, endpoint compromise, or data access was confirmed from the provided evidence.
+Firewall logs show the SSH flow on **22/TCP** was **allowed**, but IPS logs detected the activity as **SSH Connection from Unusual Location** and **blocked** it. The source IP has **100% abuse confidence** and is associated with **VEE TIME CORP.** in Taiwan.
+
+No successful SSH login, command execution, compromise, or service impact was confirmed from the provided evidence.
 
 ## Alert Details
 
-| Field                | Value                                                                              |
-| -------------------- | ---------------------------------------------------------------------------------- |
-| Receive Time         | 2/8/2025 08:29 AM                                                                  |
-| Source IP            | 201.172.173.50                                                                     |
-| Source Port          | 25113                                                                              |
-| Destination IP       | 10.0.2.12                                                                          |
-| Destination Port     | 4500                                                                               |
-| Service              | IPsec NAT-T / VPN                                                                  |
-| Protocol             | UDP                                                                                |
-| Direction            | Inbound                                                                            |
-| Firewall Threat Name | VPN Traffic                                                                        |
-| Firewall Severity    | NA                                                                                 |
-| Firewall Action      | Allowed                                                                            |
-| VA Field             | Geo                                                                                |
-| Source Details       | Television Internacional, S.A. de C.V.; Fixed Line ISP; izzi.mx; Monterrey, Mexico |
-| Abuse Confidence     | 100%                                                                               |
+| Field             | Value                                                 |
+| ----------------- | ----------------------------------------------------- |
+| Receive Time      | 4/22/2025 19:31                                       |
+| Source IP         | 210.209.137.144                                       |
+| Destination IP    | 10.0.11.11                                            |
+| Destination Port  | 22                                                    |
+| Service           | SSH                                                   |
+| Protocol          | TCP                                                   |
+| Direction         | Inbound                                               |
+| Threat Name       | SSH Connection from Unusual Location                  |
+| Severity          | Critical in alert / High in IPS aggregation           |
+| Firewall Action   | Allowed                                               |
+| IPS Action        | Blocked                                               |
+| User              | admin                                                 |
+| IPS Device        | IPS_01                                                |
+| Source Reputation | 100% abuse confidence                                 |
+| Source Details    | VEE TIME CORP.; AS17809; vee.com.tw; Taichung, Taiwan |
 
 ## Affected Assets
 
-| Asset Field          | Details             |
-| -------------------- | ------------------- |
-| Destination IP       | 10.0.2.12           |
-| Hostname             | IvantiVPN01         |
-| Operating System     | Windows Server 2022 |
-| Asset Role           | VPN Server          |
-| User                 | priya.verma         |
-| Department           | Finance             |
-| Device               | iOS / iPhone 14 Pro |
-| Endpoint             | ENDP-053            |
-| Business Criticality | Not Provided        |
+| Asset Field          | Details          |
+| -------------------- | ---------------- |
+| Destination IP       | 10.0.11.11       |
+| Hostname             | LinFDWebServer07 |
+| Operating System     | Linux - RHEL 8   |
+| Platform             | Linux            |
+| Asset Role           | Web Server       |
+| Hosting              | AWS Cloud        |
+| Business Criticality | Not Provided     |
 
 ## Evidence Reviewed
 
-| Evidence Source          | Observation                                                       |
-| ------------------------ | ----------------------------------------------------------------- |
-| Firewall Logs            | Inbound VPN traffic from **201.172.173.50** to **10.0.2.12:4500** |
-| Firewall Action          | **Allowed**                                                       |
-| VPN Logs                 | Authentication initiated for **priya.verma**                      |
-| VPN Realm                | Corporate_VPN                                                     |
-| Authentication Method    | Password                                                          |
-| MFA Status               | Prompted                                                          |
-| Successful VPN Login     | Not Observed                                                      |
-| MFA Approval             | Not Observed                                                      |
-| Internal Access Evidence | Not Observed                                                      |
-| Endpoint/EDR Evidence    | Not Provided                                                      |
+| Evidence Source      | Observation                                                                 |
+| -------------------- | --------------------------------------------------------------------------- |
+| IPS Alert            | SSH unusual-location activity detected for **210.209.137.144 → 10.0.11.11** |
+| Firewall Logs        | SSH traffic on **22/TCP** was **Allowed**                                   |
+| IPS Logs             | SSH unusual-location activity was **Blocked**                               |
+| Additional Traffic   | **5 allowed 443/TCP web traffic events** observed                           |
+| Successful SSH Login | Not Observed                                                                |
+| Command Execution    | Not Observed                                                                |
+| Host Compromise      | Not Observed                                                                |
+| Service Impact       | Not Provided                                                                |
 
 ## SIEM / Splunk Analysis
 
-```spl id="x21r8m"
-index=main srcIP="201.172.173.50" dstIP="10.0.2.12" dstPort=4500 sourcetype="firewall_logs"
-| table _time, srcIP, VA, dstIP, srcPort, dstPort, Threat_Name, Severity, Action, Protocol, Direction
-| dedup dstIP
+```spl id="yzt23p"
+index=main (sourcetype="firewall_logs" OR sourcetype="IPS_logs") srcIP="210.209.137.144" dstIP="10.0.11.11"
+| stats count by sourcetype, srcIP, dstIP, dstPort, Threat_Name, Severity, Action, Protocol, Direction
+| sort - count
 ```
 
-| _time               | srcIP          | VA           | dstIP     | srcPort | dstPort | Threat_Name | Severity | Action  | Protocol | Direction |
-| ------------------- | -------------- | ------------ | --------- | ------: | ------: | ----------- | -------- | ------- | -------- | --------- |
-| 2025-02-08 08:34:00 | 201.172.173.50 | Not Provided | 10.0.2.12 |   25113 |    4500 | NA          | NA       | allowed | udp      | Inbound   |
+| sourcetype    | srcIP           | dstIP      | dstPort | Threat_Name                          | Severity | Action  | Protocol | Direction | Count |
+| ------------- | --------------- | ---------- | ------: | ------------------------------------ | -------- | ------- | -------- | --------- | ----: |
+| IPS_logs      | 210.209.137.144 | 10.0.11.11 |     443 | Web Traffic                          | NA       | allowed | tcp      | Inbound   |     5 |
+| firewall_logs | 210.209.137.144 | 10.0.11.11 |     443 | NA                                   | NA       | Allowed | tcp      | Inbound   |     5 |
+| IPS_logs      | 210.209.137.144 | 10.0.11.11 |      22 | SSH Connection from Unusual Location | high     | blocked | tcp      | Inbound   |     1 |
+| firewall_logs | 210.209.137.144 | 10.0.11.11 |      22 | NA                                   | NA       | Allowed | tcp      | Inbound   |     1 |
 
-```spl id="ay8g3p"
-index=main sourcetype="vpn_logs" "201.172.173.50"
-| table source_ip destination_ip user alert_status authentication_method device_type mfa_status Message Realm Hostname
-| dedup source_ip
-```
-
-| source_ip      | destination_ip | user        | alert_status | authentication_method | device_type | mfa_status | Realm         | Hostname      |
-| -------------- | -------------- | ----------- | ------------ | --------------------- | ----------- | ---------- | ------------- | ------------- |
-| 201.172.173.50 | 10.0.2.12      | priya.verma | suspicious   | Password              | iOS         | Prompted   | Corporate_VPN | iPhone 14 Pro |
+**Analysis Note:** Firewall policy allowed the SSH connection attempt, but IPS inspection blocked the suspicious SSH activity. Allowed **443/TCP** traffic may be expected for a web server, but should be monitored due to the source reputation.
 
 ## MITRE ATT&CK Mapping
 
-| Tactic            | Technique                                      | ID    | Reason                                                                                          |
-| ----------------- | ---------------------------------------------- | ----- | ----------------------------------------------------------------------------------------------- |
-| Initial Access    | Valid Accounts                                 | T1078 | VPN authentication was initiated for a valid user account                                       |
-| Initial Access    | External Remote Services                       | T1133 | Attempt involved external VPN access to corporate remote access infrastructure                  |
-| Credential Access | Brute Force / Credential Stuffing              | T1110 | Password-based authentication attempt from unusual geolocation; credential misuse not confirmed |
-| Defense Evasion   | Multi-Factor Authentication Request Generation | T1621 | MFA was prompted; MFA fatigue/abuse is possible but not confirmed                               |
+| Tactic            | Technique                | ID        | Reason                                                                   |
+| ----------------- | ------------------------ | --------- | ------------------------------------------------------------------------ |
+| Initial Access    | External Remote Services | T1133     | External source attempted SSH access to a cloud-hosted Linux server      |
+| Lateral Movement  | Remote Services: SSH     | T1021.004 | SSH service was targeted; successful authentication not confirmed        |
+| Credential Access | Valid Accounts           | T1078     | Username **admin** was observed; successful account use is not confirmed |
 
 ## Analyst Assessment
 
-**Assessment:** **Needs Escalation — User Validation Required**
+**Assessment:** **True Positive — Prevented by IPS**
 
-The activity is suspicious due to unusual geolocation, high source abuse confidence, VPN access targeting, password-based authentication, and MFA prompt generation. However, the evidence only confirms **authentication initiated**, not successful VPN login.
+The alert is valid because IPS detected and blocked SSH access from an unusual high-risk external source. The activity targeted the **admin** user on a Linux web server. No evidence confirms successful authentication, shell access, command execution, persistence, or compromise.
 
-This is **not confirmed account compromise** based on the provided logs. User validation and VPN authentication result review are required before closure.
+The main security gap is that firewall policy allowed inbound SSH before IPS enforcement.
 
 ## Impact Analysis
 
-| Area            | Assessment                                               |
-| --------------- | -------------------------------------------------------- |
-| Confidentiality | No data access observed                                  |
-| Integrity       | No unauthorized modification observed                    |
-| Availability    | No service disruption reported                           |
-| Business Impact | Potentially high if Finance account VPN access succeeded |
-| Current Risk    | Medium; successful login and MFA approval not confirmed  |
+| Area            | Assessment                                             |
+| --------------- | ------------------------------------------------------ |
+| Confidentiality | No unauthorized access observed                        |
+| Integrity       | No command execution or modification confirmed         |
+| Availability    | No service disruption reported                         |
+| Business Impact | No confirmed impact; elevated risk due to SSH exposure |
+| Current Risk    | Reduced by IPS block; firewall rule update required    |
 
 ## Recommended Actions
 
-1. Validate whether VPN authentication succeeded or failed.
-2. Confirm whether MFA was approved, denied, or timed out.
-3. Contact **priya.verma** to confirm travel/location and device ownership.
-4. Review VPN session logs for session start/end time and internal resource access.
-5. Review authentication logs for impossible travel, repeated attempts, and new-device activity.
-6. Check mailbox activity for suspicious inbox rules, forwarding, or sent emails.
-7. Review endpoint **ENDP-053** for EDR alerts or phishing indicators.
-8. If user denies the activity, reset password, revoke sessions, and require MFA re-registration.
-9. Escalate to SOC L2 if successful login, unexpected MFA approval, user denial, or suspicious post-login activity is confirmed.
+1. Block **210.209.137.144 → 10.0.11.11:22/TCP** at the firewall.
+2. Add **210.209.137.144** to a watchlist/blocklist as per policy.
+3. Restrict SSH access to approved VPN, bastion host, jump server, or trusted admin IPs only.
+4. Review Linux SSH logs on **LinFDWebServer07** around **4/22/2025 19:31**.
+5. Validate whether direct SSH login for user **admin** is allowed; disable if not required.
+6. Monitor allowed **443/TCP** traffic from the same source for suspicious web requests.
+7. Escalate only if successful SSH login, suspicious commands, endpoint alerts, repeated attempts, or service impact are observed.
 
 ## Escalation Decision
 
-**Decision:** **User validation required; escalate only if suspicious activity is confirmed.**
+**Decision:** **No SOC L2 escalation required; close after firewall rule update.**
 
-**Reason:** Firewall and VPN logs confirm suspicious VPN authentication activity, but do not confirm successful login, MFA approval, compromise, or internal access. The ticket should remain under review until user confirmation and VPN authentication status are validated.
+**Reason:** IPS blocked the suspicious SSH attempt and no successful login, host compromise, command execution, or service impact was observed from the reviewed evidence. Firewall rule update and source IP blocking are required because the firewall initially allowed the SSH flow.
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-012 — Firewall: VPN Login GeoLocation Detected**. Firewall logs show inbound VPN traffic from **201.172.173.50** to **10.0.2.12 / IvantiVPN01** on **4500/UDP**, with action **allowed**. VPN logs show authentication initiated for user **priya.verma** from an **iOS / iPhone 14 Pro** device, with MFA status **Prompted**. No successful VPN login, MFA approval, internal access, endpoint compromise, or data access was confirmed from the provided evidence. User validation and VPN authentication result review are required before final closure.
+SOC investigated ticket **CS-0291 — IPS: SSH Connection from Unusual Location**. Inbound SSH traffic from **210.209.137.144** to **10.0.11.11 / LinFDWebServer07** on **22/TCP** was allowed by firewall policy but blocked by **IPS_01**. The source IP has **100% abuse confidence** and is associated with VEE TIME CORP. in Taiwan. No successful SSH login, command execution, compromise, or service impact was observed. Ticket closed as **True Positive — Prevented by IPS**, with firewall rule update and source IP block recommended.
 
 ## Skills Demonstrated
 
-VPN alert triage, geolocation anomaly investigation, firewall/VPN log correlation, MFA-risk analysis, user validation planning, account compromise assessment, MITRE ATT&CK mapping, impact analysis, escalation decision-making, and SOC ticket documentation.
+Firewall and IPS correlation, SSH investigation, unusual-location alert triage, Linux web server risk assessment, source reputation review, MITRE ATT&CK mapping, impact analysis, escalation decision-making, and SOC ticket documentation.
+
 
 ## ⚠️ Disclaimer
 
