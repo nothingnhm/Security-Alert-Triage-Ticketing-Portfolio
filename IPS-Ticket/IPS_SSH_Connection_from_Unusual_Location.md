@@ -4,7 +4,7 @@
 
 | Field            | Details                                   |
 | ---------------- | ----------------------------------------- |
-| Ticket ID        | CS-0291                                   |
+| Ticket ID        | CS-013                                    |
 | Alert Name       | IPS: SSH Connection from Unusual Location |
 | Ticket Status    | Closed                                    |
 | Priority / SLA   | Normal / Critical                         |
@@ -126,7 +126,7 @@ The main security gap is that firewall policy allowed inbound SSH before IPS enf
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0291 — IPS: SSH Connection from Unusual Location**. Inbound SSH traffic from **210.209.137.144** to **10.0.11.11 / LinFDWebServer07** on **22/TCP** was allowed by firewall policy but blocked by **IPS_01**. The source IP has **100% abuse confidence** and is associated with VEE TIME CORP. in Taiwan. No successful SSH login, command execution, compromise, or service impact was observed. Ticket closed as **True Positive — Prevented by IPS**, with firewall rule update and source IP block recommended.
+SOC investigated ticket **CS-013 — IPS: SSH Connection from Unusual Location**. Inbound SSH traffic from **210.209.137.144** to **10.0.11.11 / LinFDWebServer07** on **22/TCP** was allowed by firewall policy but blocked by **IPS_01**. The source IP has **100% abuse confidence** and is associated with VEE TIME CORP. in Taiwan. No successful SSH login, command execution, compromise, or service impact was observed. Ticket closed as **True Positive — Prevented by IPS**, with firewall rule update and source IP block recommended.
 
 ## Skills Demonstrated
 
