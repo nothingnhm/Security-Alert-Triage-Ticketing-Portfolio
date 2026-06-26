@@ -16,7 +16,7 @@
 
 A WAF alert was triggered for **Directory Traversal** involving inbound HTTPS traffic from external source IP **45.227.255.2** to internal web server **10.0.2.32 / LinITWebServer01** on **443/TCP**.
 
-The initial event targeted **it.cybersecxperts.com/admin** with a traversal payload attempting to access `/etc/passwd`. The initial action showed **Allowed** while WAF mode was **Monitoring**, but the response code was **403**. Later reviewed WAF logs showed repeated traversal attempts from the same source were **Blocked** in **Blocking** mode with HTTP **403**.
+The initial event targeted **it.abc.com/admin** with a traversal payload attempting to access `/etc/passwd`. The initial action showed **Allowed** while WAF mode was **Monitoring**, but the response code was **403**. Later reviewed WAF logs showed repeated traversal attempts from the same source were **Blocked** in **Blocking** mode with HTTP **403**.
 
 No successful file disclosure, unauthorized file access, web server compromise, or service impact was confirmed from the provided evidence.
 
@@ -131,7 +131,7 @@ This is **not confirmed compromise**. The reviewed evidence shows HTTP **403** r
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-024 — WAF: Directory Traversal**. Inbound HTTPS traffic from **45.227.255.2** to **10.0.2.32 / LinITWebServer01** targeted **it.cybersecxperts.com** with directory traversal payloads, including attempts to access `/etc/passwd` and `boot.ini`. The initial event showed Allowed while WAF was in Monitoring mode, but the response was HTTP **403**. Later WAF events were blocked in Blocking mode. No successful file disclosure, web application compromise, host compromise, or service impact was observed. Ticket closed as **True Positive — Denied/Blocked by WAF**, with source IP blocking and WAF/IPS rule enforcement recommended.
+SOC investigated ticket **CS-024 — WAF: Directory Traversal**. Inbound HTTPS traffic from **45.227.255.2** to **10.0.2.32 / LinITWebServer01** targeted **it.abc.com** with directory traversal payloads, including attempts to access `/etc/passwd` and `boot.ini`. The initial event showed Allowed while WAF was in Monitoring mode, but the response was HTTP **403**. Later WAF events were blocked in Blocking mode. No successful file disclosure, web application compromise, host compromise, or service impact was observed. Ticket closed as **True Positive — Denied/Blocked by WAF**, with source IP blocking and WAF/IPS rule enforcement recommended.
 
 ## Skills Demonstrated
 
