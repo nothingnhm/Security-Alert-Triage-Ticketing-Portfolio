@@ -159,3 +159,26 @@ SOC investigated ticket **CS-026— WAF: Remote Code Execution**. Inbound HTTPS 
 ## Skills Demonstrated
 
 WAF alert triage, remote code execution investigation, payload analysis, web server risk assessment, Splunk log review, source context validation, MITRE ATT&CK mapping, impact assessment, escalation decision-making, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
