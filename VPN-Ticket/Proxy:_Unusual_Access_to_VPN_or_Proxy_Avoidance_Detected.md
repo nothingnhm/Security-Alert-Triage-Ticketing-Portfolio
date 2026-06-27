@@ -4,7 +4,7 @@
 
 | Field            | Details                                                                        |
 | ---------------- | ------------------------------------------------------------------------------ |
-| Ticket ID        | CS-0255                                                                        |
+| Ticket ID        | CS-040                                                                         |
 | Alert Name       | Proxy: Unusual Access to VPN or Proxy Avoidance Detected                       |
 | Ticket Status    | Closed                                                                         |
 | Priority / SLA   | Normal / Default SLA                                                           |
@@ -137,7 +137,7 @@ This is **not confirmed endpoint compromise**. No malware download, credential e
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0255 — Proxy: Unusual Access to VPN or Proxy Avoidance Detected**. Proxy logs show user **Daniel Nair** from **10.1.2.44 / ENDP-219** accessed **aproxy.com**, categorized as **Proxy Avoidance**. The user reached the site through a Google search referrer and then accessed `https://aproxy.com/login/`. The proxy action was Allowed, and both requests returned HTTP **200**. No malware download, endpoint compromise, data exfiltration, or confirmed malicious activity was observed from the provided logs. Ticket closed as **True Positive — Proxy Avoidance Policy Violation / No Confirmed Compromise**, with user validation, domain/IP blocking, and Proxy Avoidance category enforcement recommended.
+SOC investigated ticket **CS-040 — Proxy: Unusual Access to VPN or Proxy Avoidance Detected**. Proxy logs show user **Daniel Nair** from **10.1.2.44 / ENDP-219** accessed **aproxy.com**, categorized as **Proxy Avoidance**. The user reached the site through a Google search referrer and then accessed `https://aproxy.com/login/`. The proxy action was Allowed, and both requests returned HTTP **200**. No malware download, endpoint compromise, data exfiltration, or confirmed malicious activity was observed from the provided logs. Ticket closed as **True Positive — Proxy Avoidance Policy Violation / No Confirmed Compromise**, with user validation, domain/IP blocking, and Proxy Avoidance category enforcement recommended.
 
 ## Skills Demonstrated
 
