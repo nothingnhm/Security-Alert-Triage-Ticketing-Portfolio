@@ -4,7 +4,7 @@
 
 | Field             | Details                                                                     |
 | ----------------- | --------------------------------------------------------------------------- |
-| Ticket ID         | CS-0406                                                                     |
+| Ticket ID         | CS-061                                                                     |
 | Alert Name        | System Fault – Device Not Sending Logs to Splunk                            |
 | Incident Category | System Fault / Log Forwarding Interruption                                  |
 | Ticket Status     | Closed                                                                      |
@@ -327,8 +327,31 @@ Escalate further only if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0406 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **CiscoSwitch07** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a medium-severity network switch with IP **192.168.1.7**, using Splunk index `main`, and owned by the **Network Team**. SOC validated the alert using `index=main host=CiscoSwitch07` and confirmed no new logs after the reported last log timestamp **9/19/2025 13:34**. Splunk indexer and ingestion services were verified as operational, port **9993** was open and listening, and other network devices continued forwarding logs successfully. The issue was confirmed as isolated to CiscoSwitch07 and escalated to the Network Team for switch-side syslog/log forwarding validation. The Network Team revalidated the configuration, restarted the logging/syslog service, and confirmed connectivity to the Splunk receiver. SOC rechecked Splunk and confirmed that logs resumed successfully. Ticket closed as **Resolved — Temporary Switch Syslog/Log Forwarding Disruption**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
+SOC investigated ticket **CS-061 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **CiscoSwitch07** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a medium-severity network switch with IP **192.168.1.7**, using Splunk index `main`, and owned by the **Network Team**. SOC validated the alert using `index=main host=CiscoSwitch07` and confirmed no new logs after the reported last log timestamp **9/19/2025 13:34**. Splunk indexer and ingestion services were verified as operational, port **9993** was open and listening, and other network devices continued forwarding logs successfully. The issue was confirmed as isolated to CiscoSwitch07 and escalated to the Network Team for switch-side syslog/log forwarding validation. The Network Team revalidated the configuration, restarted the logging/syslog service, and confirmed connectivity to the Splunk receiver. SOC rechecked Splunk and confirmed that logs resumed successfully. Ticket closed as **Resolved — Temporary Switch Syslog/Log Forwarding Disruption**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
 
 ## Skills Demonstrated
 
 System fault triage, Splunk log validation, network switch log monitoring, syslog/log forwarding investigation, SIEM health validation, log gap analysis, infrastructure issue scoping, Network Team escalation, post-remediation verification, root cause analysis, impact assessment, evidence limitation handling, closure documentation, and SOC operational monitoring.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
