@@ -4,7 +4,7 @@
 
 | Field                | Details                                                                                   |
 | -------------------- | ----------------------------------------------------------------------------------------- |
-| Ticket ID            | CS-0242                                                                                   |
+| Ticket ID            | CS-058                                                                                    |
 | Incident Title       | Phishing Email with Credential Harvesting Attempt                                         |
 | Ticket Status        | Closed                                                                                    |
 | Priority / SLA       | Normal / Medium                                                                           |
@@ -366,8 +366,31 @@ Escalate to **SOC L2 / Identity Team** if any of the following are identified:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0242 — Phishing Email with Credential Harvesting Attempt** reported by **Brian Lee**. The phishing email was sent from `rebecca@princetonmercer.org` with the subject **Distribution Remittance 84,300.09 Process_Ref.3hdhbsnn34n24jszmfbshn4vahdeh4**. Email gateway logs confirmed delivery to seven internal users: `myra.raju@abc.com`, `william.rao@abc.com`, `ajay.collins@abc.com`, `samuel.jain@abc.com`, `rakesh.chauhan@abc.com`, `sneha.khanna@abc.com`, and `brian.lee@abc.com`. The embedded URL used GrowthZone infrastructure and pointed to `https://princetonmercerregionalchamberofcommerce.growthzoneapp.com/ap/r/99a0a6caa8a74d3b9e2e07ecc4ce9bf1`. Proxy logs confirmed multiple users accessed the phishing page, with repeated activity for Brian Lee, Sneha Khanna, and Rakesh Chauhan. POST activity was observed during investigation, indicating possible credential submission. Suspicious VPN authentication attempts were later observed from `185.7.214.37`, where password authentication was initiated, MFA challenges were generated, OTP prompts were sent, and MFA failed. No successful VPN session, endpoint compromise, malware execution, lateral movement, or data exfiltration was confirmed. Ticket closed as **True Positive — Credential Harvesting Attempt / MFA Prevented Unauthorized VPN Access**, with password reset, session revocation, phishing email quarantine, IOC blocking, user awareness, and 2–3 days of monitoring recommended.
+SOC investigated ticket **CS-058 — Phishing Email with Credential Harvesting Attempt** reported by **Brian Lee**. The phishing email was sent from `rebecca@princetonmercer.org` with the subject **Distribution Remittance 84,300.09 Process_Ref.3hdhbsnn34n24jszmfbshn4vahdeh4**. Email gateway logs confirmed delivery to seven internal users: `myra.raju@abc.com`, `william.rao@abc.com`, `ajay.collins@abc.com`, `samuel.jain@abc.com`, `rakesh.chauhan@abc.com`, `sneha.khanna@abc.com`, and `brian.lee@abc.com`. The embedded URL used GrowthZone infrastructure and pointed to `https://princetonmercerregionalchamberofcommerce.growthzoneapp.com/ap/r/99a0a6caa8a74d3b9e2e07ecc4ce9bf1`. Proxy logs confirmed multiple users accessed the phishing page, with repeated activity for Brian Lee, Sneha Khanna, and Rakesh Chauhan. POST activity was observed during investigation, indicating possible credential submission. Suspicious VPN authentication attempts were later observed from `185.7.214.37`, where password authentication was initiated, MFA challenges were generated, OTP prompts were sent, and MFA failed. No successful VPN session, endpoint compromise, malware execution, lateral movement, or data exfiltration was confirmed. Ticket closed as **True Positive — Credential Harvesting Attempt / MFA Prevented Unauthorized VPN Access**, with password reset, session revocation, phishing email quarantine, IOC blocking, user awareness, and 2–3 days of monitoring recommended.
 
 ## Skills Demonstrated
 
 User-reported phishing triage, email gateway investigation, third-party infrastructure abuse analysis, proxy log correlation, user interaction validation, VPN authentication investigation, MFA failure analysis, credential exposure assessment, IOC extraction, MITRE ATT&CK mapping, timeline reconstruction, impact validation, containment planning, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
