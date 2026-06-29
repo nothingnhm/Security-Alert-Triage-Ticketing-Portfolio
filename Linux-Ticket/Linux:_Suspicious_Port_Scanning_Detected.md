@@ -340,3 +340,26 @@ SOC investigated ticket **CS-083 — Suspicious Port Scanning Detected** on host
 ## Skills Demonstrated
 
 Linux log analysis, Splunk investigation, Nmap command review, port scanning triage, network reconnaissance validation, command-line analysis, user role validation, source host validation, IOC extraction, MITRE ATT&CK mapping, false-positive assessment, detection tuning recommendation, escalation criteria definition, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
