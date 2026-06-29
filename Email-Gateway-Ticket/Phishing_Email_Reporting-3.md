@@ -4,7 +4,7 @@
 
 | Field                | Details                                                                         |
 | -------------------- | ------------------------------------------------------------------------------- |
-| Ticket ID            | CS-0236                                                                         |
+| Ticket ID            | CS-056                                                                         |
 | Alert Name           | Phishing Email Reporting                                                        |
 | Ticket Status        | closed                                                                          |
 | Priority / SLA       | Normal / Default SLA                                                            |
@@ -250,8 +250,31 @@ Current impact: **No security impact identified.**
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0236 — Phishing Email Reporting** submitted by **Karthik Gupta**. The reported email was sent from `ashlyn.saju@freshworks.com` to `hr@abc.com` and `meera.sharma@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. The email contained Freshworks tracking links that redirected to a legitimate Calendly scheduling page at `https://calendly.com/ashlyn-saju-/30min`. SPF and DMARC passed. DKIM failed due to body hash verification mismatch, but no malicious indicators were identified. No attachments were present, no phishing page or credential harvesting behavior was observed, and no proxy click activity, endpoint compromise, malware delivery, or account compromise was found. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
+SOC investigated ticket **CS-056 — Phishing Email Reporting** submitted by **Karthik Gupta**. The reported email was sent from `ashlyn.saju@freshworks.com` to `hr@abc.com` and `meera.sharma@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. The email contained Freshworks tracking links that redirected to a legitimate Calendly scheduling page at `https://calendly.com/ashlyn-saju-/30min`. SPF and DMARC passed. DKIM failed due to body hash verification mismatch, but no malicious indicators were identified. No attachments were present, no phishing page or credential harvesting behavior was observed, and no proxy click activity, endpoint compromise, malware delivery, or account compromise was found. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
+
+---
 
 ## Skills Demonstrated
 
 User-reported phishing triage, email header review, SPF/DKIM/DMARC interpretation, URL redirect analysis, marketing email validation, Splunk email log review, proxy activity validation, IOC assessment, false positive determination, impact validation, escalation decision-making, and SOC ticket documentation.
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
