@@ -4,7 +4,7 @@
 
 | Field             | Details                                                                  |
 | ----------------- | ------------------------------------------------------------------------ |
-| Ticket ID         | CS-0341                                                                  |
+| Ticket ID         | CS-080                                                                   |
 | Alert Name        | Linux:- Unauthorized SSH Session Leading to User & Shadow File Tampering |
 | Incident Category | Linux / Unauthorized SSH Access / Credential File Tampering              |
 | Ticket Status     | Closed                                                                   |
@@ -361,8 +361,31 @@ Escalation is required for:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0341 — Unauthorized SSH Session Leading to User & Shadow File Tampering** for host `LinFDWebServer04 / 10.0.11.8`. Linux logs showed a successful unauthorized SSH session from source IP `62.76.142.12` using account `webacc`, followed by successful execution of `useradd admin`, access to `/etc/passwd`, and access to `/etc/shadow`. The source IP had **100% abuse confidence** and was associated with `mail.aesergeev.ru / qwarta.ru` in the Russian Federation. The sequence of successful SSH access, local account creation, and sensitive authentication file access confirms compromise. SOC recommended isolating `LinFDWebServer04`, blocking `62.76.142.12`, resetting credentials, removing unauthorized accounts, validating `/etc/passwd` and `/etc/shadow` integrity, reviewing post-compromise activity, and escalating to SOC L2 / Linux Team / Incident Response. Ticket closed as **True Positive — Confirmed Linux Server Compromise / Unauthorized SSH Access Successful / User and Shadow File Tampering Observed**.
+SOC investigated ticket **CS-080 — Unauthorized SSH Session Leading to User & Shadow File Tampering** for host `LinFDWebServer04 / 10.0.11.8`. Linux logs showed a successful unauthorized SSH session from source IP `62.76.142.12` using account `webacc`, followed by successful execution of `useradd admin`, access to `/etc/passwd`, and access to `/etc/shadow`. The source IP had **100% abuse confidence** and was associated with `mail.aesergeev.ru / qwarta.ru` in the Russian Federation. The sequence of successful SSH access, local account creation, and sensitive authentication file access confirms compromise. SOC recommended isolating `LinFDWebServer04`, blocking `62.76.142.12`, resetting credentials, removing unauthorized accounts, validating `/etc/passwd` and `/etc/shadow` integrity, reviewing post-compromise activity, and escalating to SOC L2 / Linux Team / Incident Response. Ticket closed as **True Positive — Confirmed Linux Server Compromise / Unauthorized SSH Access Successful / User and Shadow File Tampering Observed**.
 
 ## Skills Demonstrated
 
 Linux log analysis, Splunk investigation, unauthorized SSH session triage, post-compromise activity analysis, account creation detection, `/etc/passwd` and `/etc/shadow` review, source IP reputation analysis, IOC extraction, MITRE ATT&CK mapping, containment planning, forensic validation planning, escalation decision-making, and SOC incident documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
