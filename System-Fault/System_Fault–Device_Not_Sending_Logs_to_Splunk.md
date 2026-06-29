@@ -4,7 +4,7 @@
 
 | Field             | Details                                                                  |
 | ----------------- | ------------------------------------------------------------------------ |
-| Ticket ID         | CS-0408                                                                  |
+| Ticket ID         | CS-064                                                                  |
 | Alert Name        | System Fault – Device Not Sending Logs to Splunk                         |
 | Incident Category | System Fault / Log Forwarding Interruption                               |
 | Ticket Status     | Closed                                                                   |
@@ -313,7 +313,7 @@ Escalate further only if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0408 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **ImpWAF01** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a high-severity WAF with IP **10.0.2.10**, using Splunk index `main`, and owned by the **Security Engineering Team**. SOC validated the alert using `index=main host=ImpWAF01` and confirmed no new logs after the reported last log timestamp **9/21/2025 18:54**. Splunk indexers, ingestion services, and port **9993** were verified as operational. Other WAF/security devices continued forwarding logs successfully, confirming that the issue was isolated to ImpWAF01. The case was escalated to Security Engineering for WAF-side logging/syslog validation. Security Engineering restarted the WAF logging/log-forwarding service and verified the forwarding configuration. SOC revalidated Splunk ingestion and confirmed that logs resumed successfully. Ticket closed as **Resolved — Temporary WAF Log Forwarding Service Interruption**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
+SOC investigated ticket **CS-064 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **ImpWAF01** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a high-severity WAF with IP **10.0.2.10**, using Splunk index `main`, and owned by the **Security Engineering Team**. SOC validated the alert using `index=main host=ImpWAF01` and confirmed no new logs after the reported last log timestamp **9/21/2025 18:54**. Splunk indexers, ingestion services, and port **9993** were verified as operational. Other WAF/security devices continued forwarding logs successfully, confirming that the issue was isolated to ImpWAF01. The case was escalated to Security Engineering for WAF-side logging/syslog validation. Security Engineering restarted the WAF logging/log-forwarding service and verified the forwarding configuration. SOC revalidated Splunk ingestion and confirmed that logs resumed successfully. Ticket closed as **Resolved — Temporary WAF Log Forwarding Service Interruption**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
 
 ## Skills Demonstrated
 
