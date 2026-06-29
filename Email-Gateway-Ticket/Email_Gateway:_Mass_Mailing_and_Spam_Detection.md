@@ -4,7 +4,7 @@
 
 | Field            | Details                                                                                                     |
 | ---------------- | ----------------------------------------------------------------------------------------------------------- |
-| Ticket ID        | CS-0233                                                                                                     |
+| Ticket ID        | CS-052                                                                                                     |
 | Alert Name       | Email Gateway: Mass Mailing and Spam Detection                                                              |
 | Ticket Status    | Closed                                                                                                      |
 | Priority / SLA   | Normal / Default SLA                                                                                        |
@@ -317,8 +317,31 @@ Escalation is required because:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0233 — Email Gateway: Mass Mailing and Spam Detection**. The campaign used password-expiration and policy-update themes to target users. The primary phishing email was sent from `gloria.pacheco@hairbraidingwarnerrobins.com` to `anjali.chauhan@abc.com` with subject **Important: Password Expiration Notice** and included the phishing URL `https://centraltraders.ae/owa-auth.asspx/index.html`. The URL was categorized as a security risk and flagged by **12/92 vendors** as malicious. A related blocked email from `sean.morgan@hairbraidingwarnerrobins.com` contained `http://ai22.hgva.net`. Proxy logs confirmed multiple users accessed the suspicious URL, including GET and POST requests. POST requests were observed for **Anjali Chauhan** and **Sneha Nair**, indicating possible credential submission. VPN logs showed suspicious activity from Tor exit node `185.220.101.40`, including a successful VPN login for **Sneha Nair** and failed attempts for **Anjali Chauhan**. Ticket closed as **True Positive — Phishing/Mass Mailing Campaign with Possible Credential Compromise**, with password resets, session revocation, IOC blocking, mailbox cleanup, SOC L2/Identity escalation, and 2–3 days of monitoring recommended.
+SOC investigated ticket **CS-052 — Email Gateway: Mass Mailing and Spam Detection**. The campaign used password-expiration and policy-update themes to target users. The primary phishing email was sent from `gloria.pacheco@hairbraidingwarnerrobins.com` to `anjali.chauhan@abc.com` with subject **Important: Password Expiration Notice** and included the phishing URL `https://centraltraders.ae/owa-auth.asspx/index.html`. The URL was categorized as a security risk and flagged by **12/92 vendors** as malicious. A related blocked email from `sean.morgan@hairbraidingwarnerrobins.com` contained `http://ai22.hgva.net`. Proxy logs confirmed multiple users accessed the suspicious URL, including GET and POST requests. POST requests were observed for **Anjali Chauhan** and **Sneha Nair**, indicating possible credential submission. VPN logs showed suspicious activity from Tor exit node `185.220.101.40`, including a successful VPN login for **Sneha Nair** and failed attempts for **Anjali Chauhan**. Ticket closed as **True Positive — Phishing/Mass Mailing Campaign with Possible Credential Compromise**, with password resets, session revocation, IOC blocking, mailbox cleanup, SOC L2/Identity escalation, and 2–3 days of monitoring recommended.
 
 ## Skills Demonstrated
 
 Email gateway alert triage, mass mailing investigation, phishing campaign analysis, suspicious URL review, proxy log correlation, POST request interpretation, VPN authentication investigation, Tor exit node risk analysis, credential compromise assessment, IOC extraction, MITRE ATT&CK mapping, impact validation, containment planning, escalation decision-making, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
