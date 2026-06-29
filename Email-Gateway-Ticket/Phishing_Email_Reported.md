@@ -4,7 +4,7 @@
 
 | Field                | Details                                                                               |
 | -------------------- | ------------------------------------------------------------------------------------- |
-| Ticket ID            | CS-0241                                                                               |
+| Ticket ID            | CS-055                                                                                |
 | Alert Name           | Phishing Email Reported                                                               |
 | Incident Title       | Phishing Email with Malicious HTML Attachment                                         |
 | Ticket Status        | Closed                                                                                |
@@ -402,8 +402,31 @@ Escalate to **SOC L2 / Incident Response** if any of the following are identifie
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0241 — Phishing Email Reported** reported by **Ryan Thomas**. The email impersonated QuickBooks/ePayment branding using the display name `ePayment EFT@quickbooks.com`, while the actual sender was `katie.richman@hbgusa.com`. The subject was **Remittance advice 32493682b1baea9eaf8f52a84870de14**. Email authentication checks failed for SPF, DKIM, and DMARC. Email gateway logs confirmed delivery to `diya.bahri@abc.com` and `ryan.thomas@abc.com`. The malicious HTML attachment was `ELECTRONIC RECEIPT_Slgreen.html` with hash `74bc436a1442e54f352c3bed2e50f53170f0e14f`, detected by **17/61 security vendors** as phishing or credential theft-related content. IPS logs showed a related historical signature `SMTP: Malicious Attachment with Phishing Payload`. Proxy logs showed no activity, and EDR review found no attachment execution, suspicious process creation, persistence, malware activity, endpoint compromise, or credential theft. Ticket closed as **True Positive — Malicious Phishing Attachment Delivered / No User Impact Observed**, with email quarantine, IOC blocking, EDR hash blocklisting, user notification, and continued monitoring recommended.
+SOC investigated ticket **CS-055 — Phishing Email Reported** reported by **Ryan Thomas**. The email impersonated QuickBooks/ePayment branding using the display name `ePayment EFT@quickbooks.com`, while the actual sender was `katie.richman@hbgusa.com`. The subject was **Remittance advice 32493682b1baea9eaf8f52a84870de14**. Email authentication checks failed for SPF, DKIM, and DMARC. Email gateway logs confirmed delivery to `diya.bahri@abc.com` and `ryan.thomas@abc.com`. The malicious HTML attachment was `ELECTRONIC RECEIPT_Slgreen.html` with hash `74bc436a1442e54f352c3bed2e50f53170f0e14f`, detected by **17/61 security vendors** as phishing or credential theft-related content. IPS logs showed a related historical signature `SMTP: Malicious Attachment with Phishing Payload`. Proxy logs showed no activity, and EDR review found no attachment execution, suspicious process creation, persistence, malware activity, endpoint compromise, or credential theft. Ticket closed as **True Positive — Malicious Phishing Attachment Delivered / No User Impact Observed**, with email quarantine, IOC blocking, EDR hash blocklisting, user notification, and continued monitoring recommended.
+
+---
 
 ## Skills Demonstrated
 
 User-reported phishing triage, email authentication review, sender impersonation analysis, malicious HTML attachment investigation, file hash reputation review, Splunk email gateway analysis, IPS event correlation, proxy validation, EDR validation, IOC extraction, MITRE ATT&CK mapping, impact validation, containment planning, user validation planning, escalation decision-making, and SOC ticket documentation.
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
