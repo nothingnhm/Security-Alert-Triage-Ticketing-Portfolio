@@ -4,7 +4,7 @@
 
 | Field                    | Details                                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------------------ |
-| Ticket ID                | CS-0276                                                                                    |
+| Ticket ID                | CS-070                                                                                    |
 | Alert Name               | VPN:- User Login from TOR Exit Node Detected                                               |
 | Incident Category        | VPN / TOR Exit Node Login                                                                  |
 | Ticket Status            | Closed                                                                                     |
@@ -424,8 +424,31 @@ Escalation is required for:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0276 — User Login from TOR Exit Node Detected** for user `sneha.nair`. VPN logs showed password authentication initiation from confirmed TOR exit node `185.220.101.40` toward destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The source IP had **100% abuse confidence** and hostname `tor-exit-40.for-privacy.net`. Splunk evidence confirmed MFA challenge generation, successful authentication, active `FullAccess` VPN session, and idle timeout. The user’s usual VPN source was `49.37.255.12` from Chennai, India. IOC scoping confirmed the same TOR exit node also generated failed password authentication attempts against `anjali.chauhan`. No lateral movement or data exfiltration was confirmed from the provided logs, but successful VPN access from TOR is high-risk. SOC recommended treating `sneha.nair` as potentially compromised, isolating `MACDeB`, resetting credentials for `sneha.nair` and `anjali.chauhan`, revoking sessions, blocking `185.220.101.40`, blocking/monitoring `for-privacy.net`, reviewing internal activity, and escalating to SOC L2 / Identity / Endpoint Forensics. Ticket closed as **True Positive — Successful VPN Login from TOR Exit Node / Account Compromise Suspected**.
+SOC investigated ticket **CS-070 — User Login from TOR Exit Node Detected** for user `sneha.nair`. VPN logs showed password authentication initiation from confirmed TOR exit node `185.220.101.40` toward destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The source IP had **100% abuse confidence** and hostname `tor-exit-40.for-privacy.net`. Splunk evidence confirmed MFA challenge generation, successful authentication, active `FullAccess` VPN session, and idle timeout. The user’s usual VPN source was `49.37.255.12` from Chennai, India. IOC scoping confirmed the same TOR exit node also generated failed password authentication attempts against `anjali.chauhan`. No lateral movement or data exfiltration was confirmed from the provided logs, but successful VPN access from TOR is high-risk. SOC recommended treating `sneha.nair` as potentially compromised, isolating `MACDeB`, resetting credentials for `sneha.nair` and `anjali.chauhan`, revoking sessions, blocking `185.220.101.40`, blocking/monitoring `for-privacy.net`, reviewing internal activity, and escalating to SOC L2 / Identity / Endpoint Forensics. Ticket closed as **True Positive — Successful VPN Login from TOR Exit Node / Account Compromise Suspected**.
 
 ## Skills Demonstrated
 
 VPN log analysis, Splunk investigation, TOR exit node detection, source IP reputation review, successful authentication validation, MFA event analysis, IOC scoping, multi-user credential attack analysis, account compromise assessment, internal activity review planning, endpoint forensic escalation, MITRE ATT&CK mapping, containment recommendation, escalation decision-making, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
