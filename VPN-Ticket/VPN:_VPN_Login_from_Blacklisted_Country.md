@@ -4,7 +4,7 @@
 
 | Field                       | Details                                                                                               |
 | --------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Ticket ID                   | CS-0269                                                                                               |
+| Ticket ID                   | CS-073                                                                                               |
 | Alert Name                  | VPN:- VPN Login from Blacklisted Country                                                              |
 | Incident Category           | VPN / Suspicious Authentication                                                                       |
 | Ticket Status               | Closed                                                                                                |
@@ -347,8 +347,31 @@ Escalate to **SOC L2 / Identity / Endpoint Forensics** if any of the following o
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0269 — VPN Login from Blacklisted Country** for user `brian.lee`. VPN logs showed password authentication initiation from source IP `185.7.214.37` toward destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The alert triggered because the login originated from a blacklisted country / restricted geo-location. Splunk investigation confirmed repeated authentication attempts, MFA OTP challenge generation, and MFA failures due to incorrect OTP entries for `brian.lee`. IOC scoping confirmed that the same source IP also targeted `sneha.khanna` and `rakesh.chauhan`. No successful VPN session, MFA bypass, endpoint compromise, lateral movement, or data exfiltration was observed. MFA prevented unauthorized access. Source IP blocking, impacted user validation, credential reset if unauthorized, and endpoint validation for `MAC-12432` were recommended. Ticket closed as **True Positive — Suspicious VPN Authentication Campaign from Blacklisted Country / MFA Prevented Unauthorized Access / No Successful VPN Session Observed**.
+SOC investigated ticket **CS-074 — VPN Login from Blacklisted Country** for user `brian.lee`. VPN logs showed password authentication initiation from source IP `185.7.214.37` toward destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The alert triggered because the login originated from a blacklisted country / restricted geo-location. Splunk investigation confirmed repeated authentication attempts, MFA OTP challenge generation, and MFA failures due to incorrect OTP entries for `brian.lee`. IOC scoping confirmed that the same source IP also targeted `sneha.khanna` and `rakesh.chauhan`. No successful VPN session, MFA bypass, endpoint compromise, lateral movement, or data exfiltration was observed. MFA prevented unauthorized access. Source IP blocking, impacted user validation, credential reset if unauthorized, and endpoint validation for `MAC-12432` were recommended. Ticket closed as **True Positive — Suspicious VPN Authentication Campaign from Blacklisted Country / MFA Prevented Unauthorized Access / No Successful VPN Session Observed**.
 
 ## Skills Demonstrated
 
 VPN log analysis, Splunk investigation, blacklisted country login triage, IOC scoping, multi-user authentication campaign analysis, MFA failure analysis, suspicious login investigation, MITRE ATT&CK mapping, identity risk validation, endpoint validation planning, containment recommendation, escalation decision-making, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
