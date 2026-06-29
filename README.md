@@ -1,240 +1,261 @@
-# Triage-Ticketing-Portfolio
-A professional case-study repository documenting 80+ solved IT support and cybersecurity tickets, including issue analysis, troubleshooting steps, root cause identification, resolution notes, escalation handling, and key learning outcomes.
+# Security Alert Triage & Ticketing Portfolio
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-SOC%20Alert%20Triage-blue)](#)
+[![Role Focus](https://img.shields.io/badge/Role-SOC%20Analyst%20L1-green)](#)
+[![Documentation](https://img.shields.io/badge/Documentation-Case%20Studies-orange)](#)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen)](#)
 
-# SOC Ticket Triage Case Studies
+## Overview
 
-## 📌 Project Overview
+This repository is a professional cybersecurity portfolio project containing **80+ sanitized SOC and IT support ticket case studies**. Each case study demonstrates how alerts and tickets are reviewed, triaged, investigated, documented, resolved, or escalated in a real-world SOC/helpdesk-style workflow.
 
-This repository is a professional portfolio project documenting **80+ sanitized IT support and cybersecurity ticket case studies** based practical experience.
+The goal of this project is to show practical readiness for entry-level security roles by documenting investigation logic, evidence review, impact validation, IOC extraction, MITRE ATT&CK mapping, escalation decisions, and final closure notes.
 
-The main goal of this project is to demonstrate how tickets are analyzed, triaged, investigated, resolved, documented, and escalated in a real-world IT/SOC environment.
-
-Each case study is written in a safe and professional format without exposing any confidential company data, client information, usernames, IP addresses, domains, internal screenshots, or sensitive logs.
-
----
-
-## 🎯 Project Objective
-
-The objective of this repository is to showcase practical understanding of:
-
-* IT support ticket handling
-* SOC alert triage
-* Basic incident investigation
-* Log analysis
-* Root cause identification
-* Troubleshooting methodology
-* Escalation handling
-* Resolution documentation
-* Communication and reporting skills
-
-This project is designed to help demonstrate entry-level readiness for roles such as:
-
-* SOC Analyst L1
-* Security Analyst Intern
-* IT Support Engineer
-* Junior Systems Administrator
-* Technical Support Engineer
-* Helpdesk Analyst
-* NOC/SOC Trainee
+> **Important:** All tickets are sanitized and written for educational and portfolio purposes. No confidential company information, real client data, internal screenshots, production credentials, or sensitive logs are included.
 
 ---
 
-## 🧠 Skills Demonstrated
+## Role Alignment
 
-This repository highlights hands-on knowledge in the following areas:
+This project is designed to demonstrate practical skills for roles such as:
 
-| Skill Area          | Description                                                         |
-| ------------------- | ------------------------------------------------------------------- |
-| Ticket Triage       | Categorizing, prioritizing, and analyzing incoming tickets          |
-| Incident Analysis   | Understanding symptoms, affected assets, and possible impact        |
-| Troubleshooting     | Applying step-by-step investigation methods                         |
-| Log Review          | Reviewing Windows, Linux, firewall, proxy, VPN, and SIEM logs       |
-| Root Cause Analysis | Identifying why the issue or alert occurred                         |
-| Escalation          | Knowing when and how to escalate to L2/L3 teams                     |
-| Documentation       | Writing clear ticket notes, resolution steps, and closure summaries |
-| Communication       | Explaining technical issues in a simple and professional way        |
+- SOC Analyst L1
+- Security Analyst Intern
+- Cybersecurity Analyst Trainee
+- NOC/SOC Trainee
+- IT Support / Helpdesk Analyst
+- Junior Security Operations Analyst
+- Technical Support Engineer
 
 ---
 
-## 🛠️ Tools and Technologies Covered
+## Key Skills Demonstrated
 
-The tickets in this repository may include scenarios related to:
-
-* Windows Event Viewer
-* Linux system logs
-* Active Directory
-* Splunk SIEM
-* CrowdStrike alerts
-* Firewall logs
-* VPN logs
-* Email security alerts
-* Endpoint security alerts
-* Basic networking tools
-* Ticketing platforms such as osTicket/Jira/ServiceNow-style workflows
+| Skill Area | What This Repository Demonstrates |
+|---|---|
+| Alert Triage | Reviewing alert details, severity, affected users/assets, and initial indicators |
+| SIEM Log Analysis | Using Splunk-style investigation logic and log correlation |
+| IOC Identification | Extracting IPs, domains, URLs, users, hosts, file paths, commands, and suspicious payloads |
+| Investigation Workflow | Moving from alert review to validation, correlation, impact assessment, and closure |
+| True/False Positive Analysis | Determining whether activity is suspicious, benign, blocked, or requires escalation |
+| MITRE ATT&CK Mapping | Mapping relevant security events to attacker techniques where applicable |
+| Incident Documentation | Writing structured analyst notes, findings, timelines, recommendations, and closure summaries |
+| Escalation Handling | Identifying when L2/L3, network, endpoint, or incident response escalation is required |
+| Communication | Explaining technical findings in a clear, professional, recruiter-readable format |
 
 ---
 
-## 🧾 Ticket Documentation Format
+## Tools, Logs, and Technologies Covered
 
-Each ticket case study follows a standard documentation format:
+The case studies include scenarios involving:
+
+- Splunk SIEM investigation
+- Firewall logs
+- WAF alerts
+- VPN authentication logs
+- Email gateway alerts
+- Proxy logs
+- IPS alerts
+- Linux security logs
+- Windows/Event-style investigation concepts
+- Endpoint/security alert triage
+- Ticketing workflows similar to osTicket, Jira, and ServiceNow
+- Threat intelligence and IOC validation concepts
+
+---
+
+## Featured Investigations
+
+These are strong examples to review first because they show deeper SOC investigation flow and evidence-based reporting.
+
+| Category | Case Study | Focus Area | Outcome |
+|---|---|---|---|
+| Linux | [Suspicious Script Execution from Non-standard Path](Linux-Ticket/Linux%3A_Suspicious_Script_Execution_from_Non-standard_Path.md) | Suspicious process execution, Linux log review, MITRE mapping | Investigated and documented with escalation guidance |
+| WAF | [SQL Injection](WAF-Ticket/WAF%3A_SQL_Injection.md) | SQLi payload review, WAF evidence, blocked attack validation | Blocked / monitored |
+| Email Gateway | [Phishing Email with Credential Harvesting Attempt](Email-Gateway-Ticket/Phishing_Email_with_Credential_Harvesting_Attempt.md) | Phishing analysis, credential harvesting, user impact validation | True positive investigation |
+| Firewall | [SMB DDoS Attack](Firewall-Ticket/Firewall_SMB_DDOS_Attack.md) | Firewall log analysis, DDoS validation, mitigation review | Blocked / monitored |
+| VPN | [User Login from Geographically Distant Locations](VPN-Ticket/VPN%3A_User_Login_from_Geographically_Distant_Locations_in_Short_Duration.md) | Impossible travel, VPN session review, account risk analysis | Investigated / escalation decision |
+
+---
+
+## Repository Structure
+
+```text
+Security-Alert-Triage-Ticketing-Portfolio/
+│
+├── Email-Gateway-Ticket/     # Phishing, suspicious sender, macro attachment, spam, credential harvesting
+├── Firewall-Ticket/          # DDoS, port scanning, brute force, C2, RCE, DNS amplification
+├── IPS-Ticket/               # Intrusion prevention and exploit detection alerts
+├── Linux-Ticket/             # SSH brute force, suspicious scripts, cron jobs, root access, log tampering
+├── Proxy-Ticket/             # Web access, suspicious domains, blocked URLs, user browsing investigation
+├── System-Fault/             # IT support and system issue tickets
+├── VPN-Ticket/               # Geo-login, TOR exit node, blacklisted country, bad reputation IP, device compliance
+├── WAF-Ticket/               # SQLi, XSS, RCE, CSRF, directory traversal, HTTP flood, malicious upload
+└── README.md
+```
+
+---
+
+## Case Study Categories
+
+| Category | Example Alert Types | Skills Practiced |
+|---|---|---|
+| Email Gateway | Phishing, spam, malicious attachment, credential harvesting | Header review, sender validation, user impact, IOC extraction |
+| Firewall | DDoS, port scanning, brute force, C2 traffic, RCE attempts | Network log review, source/destination analysis, block validation |
+| IPS | Exploit attempts, suspicious network signatures | Signature review, threat validation, escalation logic |
+| Linux | SSH brute force, cron abuse, suspicious script execution, privilege misuse | Linux log analysis, command review, persistence checks |
+| Proxy | Suspicious URL access, blocked domains, policy violations | Web access review, domain reputation, user activity validation |
+| System Fault | Disk, service, access, and operational issues | IT troubleshooting and ticket closure documentation |
+| VPN | Impossible travel, TOR exit node, bad reputation IP, unusual login | Authentication review, geo-analysis, account risk validation |
+| WAF | SQLi, XSS, RCE, CSRF, directory traversal, HTTP flood | Web attack analysis, payload review, WAF decision validation |
+
+---
+
+## Standard Investigation Workflow
+
+```text
+Alert / Ticket Received
+        ↓
+Review Ticket Details
+        ↓
+Identify Affected User, Host, IP, Application, or Asset
+        ↓
+Validate Severity and Business Impact
+        ↓
+Review SIEM / Firewall / WAF / VPN / Endpoint / Email Logs
+        ↓
+Extract IOCs and Suspicious Indicators
+        ↓
+Correlate Related Events
+        ↓
+Determine True Positive, False Positive, Benign, or Blocked Attempt
+        ↓
+Recommend Containment, Remediation, Monitoring, or Escalation
+        ↓
+Document Evidence and Final Closure Notes
+```
+
+---
+
+## Standard Ticket Report Format
+
+Most security case studies follow a structure similar to:
 
 ```text
 Ticket ID:
+Alert Name:
 Category:
-Priority:
+Severity / Priority:
 Status:
-Reported By:
-Affected Asset:
-Issue Summary:
+Affected User / Host / Asset:
+Source IP / Destination IP:
+Alert Summary:
 Initial Observation:
+IOCs Identified:
+SIEM / Splunk Query Used:
+Log Evidence:
+Timeline of Events:
 Investigation Steps:
-Logs Reviewed:
-Findings:
-Root Cause:
-Resolution:
-Escalation Required:
-Closure Notes:
+Correlation and Analysis:
+Impact Assessment:
+MITRE ATT&CK Mapping:
+True Positive / False Positive Decision:
+Recommended Actions:
+Escalation Decision:
+Final Closure Note:
 Key Learning:
 ```
 
-## 🔍 Ticket Categories Covered
+---
 
-This repository includes ticket examples from the following categories:
+## Severity and Priority Guide
 
-| Category              | Example Scenarios                                     |
-| --------------------- | ----------------------------------------------------- |
-| Authentication Issues | Failed login, account lockout, password reset         |
-| Endpoint Alerts       | Malware alert, suspicious process, USB alert          |
-| Network Issues        | Firewall block, DNS issue, connectivity issue         |
-| Email Security        | Phishing email, suspicious attachment, malicious link |
-| VPN Issues            | VPN login failure, remote access problem              |
-| SIEM Alerts           | Brute-force alert, suspicious login, high event count |
-| System Administration | Disk space, service failure, patch check              |
-| Escalation Cases      | Compromised account, admin login, critical alert      |
+| Priority | Meaning | Example |
+|---|---|---|
+| Low | Minimal impact or informational activity | General request, benign policy event |
+| Medium | Limited impact or suspicious activity requiring review | Single-user issue, blocked suspicious traffic |
+| High | Security concern with possible business or account impact | Phishing, brute force, suspicious VPN login |
+| Critical | Confirmed compromise or major service/security impact | Malware outbreak, confirmed account takeover, privileged compromise |
 
 ---
 
-## 📊 Severity and Priority Understanding
+## Investigation Questions Used
 
-| Priority | Meaning                              | Example                                           |
-| -------- | ------------------------------------ | ------------------------------------------------- |
-| Low      | Minimal impact, no immediate risk    | General user request                              |
-| Medium   | Affects one user or limited system   | Account lockout                                   |
-| High     | Security concern or business impact  | Suspicious login activity                         |
-| Critical | Confirmed compromise or major outage | Malware outbreak or privileged account compromise |
+During analysis, each ticket is reviewed using questions such as:
 
----
-
-## 🚦 Basic Ticket Triage Workflow
-
-```text
-Ticket Received
-      ↓
-Understand the Issue
-      ↓
-Check Priority and Impact
-      ↓
-Collect Required Details
-      ↓
-Review Logs and Evidence
-      ↓
-Identify Root Cause
-      ↓
-Resolve or Escalate
-      ↓
-Document Findings
-      ↓
-Close Ticket
-```
+- What triggered the alert?
+- Which user, host, IP, domain, application, or asset is affected?
+- What evidence exists in SIEM, firewall, WAF, VPN, proxy, endpoint, or email logs?
+- Is the activity expected, suspicious, blocked, or confirmed malicious?
+- Are there related events before or after the alert?
+- Was any user interaction, login success, payload execution, or data access observed?
+- What IOCs should be documented?
+- Does the event map to any MITRE ATT&CK technique?
+- Is containment, monitoring, or escalation required?
+- What should be written in the final closure note?
 
 ---
 
-## 🧩 SOC Alert Triage Workflow
+## MITRE ATT&CK Usage
 
-```text
-Alert Triggered
-      ↓
-Validate Alert Details
-      ↓
-Identify User / Host / IP / Time
-      ↓
-Review Related Logs
-      ↓
-Check Threat Intelligence
-      ↓
-Determine True Positive or False Positive
-      ↓
-Contain / Escalate if Required
-      ↓
-Document Evidence
-      ↓
-Close or Escalate Ticket
-```
+Where applicable, security tickets include MITRE ATT&CK mapping to connect alert activity with real adversary behavior, such as:
+
+- Initial Access
+- Credential Access
+- Discovery
+- Execution
+- Persistence
+- Command and Control
+- Impact
+
+This helps demonstrate that the investigation is not only based on alert names, but also on attacker tactics, techniques, and possible intent.
 
 ---
 
-## 📌 Example Investigation Questions
+## What This Project Shows to Recruiters
 
-During ticket analysis, the following questions are useful:
+This repository demonstrates that I can:
 
-* What happened?
-* When did it happen?
-* Which user, host, or IP is affected?
-* Is this expected or suspicious activity?
-* What logs support the finding?
-* Is there any business impact?
-* Is escalation required?
-* What action was taken?
-* What should be monitored after resolution?
-
----
-
-## 🛡️ Security and Privacy Notice
-
-All tickets in this repository are sanitized and created for educational and portfolio purposes.
-
-This repository does not contain:
-
-* Real company names
-* Real client data
-* Real usernames
-* Real passwords
-* Real IP addresses
-* Real domains
-* Internal screenshots
-* Confidential logs
-* Proprietary ticket information
-
-Any resemblance to real environments is purely for learning and demonstration purposes.
+- Read and understand security alerts
+- Investigate logs using a structured SOC workflow
+- Identify key indicators from alerts and logs
+- Document evidence professionally
+- Separate blocked attempts from confirmed compromise
+- Decide when escalation is required
+- Write clear closure notes and recommendations
+- Understand common SOC L1 alert categories across firewall, VPN, WAF, Linux, email, proxy, and IPS logs
 
 ---
 
-## 📚 Learning Outcomes
-
-After completing this project, the following skills are demonstrated:
-
-* Ability to handle IT and security tickets professionally
-* Understanding of L1 SOC and helpdesk workflow
-* Ability to investigate common alerts and issues
-* Ability to document root cause and resolution clearly
-* Understanding of when to resolve and when to escalate
-* Awareness of security, privacy, and professional reporting standards
-
----
-
-## 🚀 Future Improvements
+## Future Improvements
 
 Planned improvements for this repository:
 
-* Add 80+ individual ticket case studies
-* Add severity-wise ticket classification
-* Add sample Splunk SPL queries for investigation
-* Add MITRE ATT&CK mapping for security-related tickets
-* Add incident response checklist
-* Add phishing investigation checklist
-* Add escalation templates
-* Add dashboard screenshots from a lab environment
+- Standardize all ticket names using a clean naming convention
+- Add a master ticket index with severity, category, outcome, and MITRE technique
+- Add MITRE ATT&CK mapping to every security-related ticket
+- Add more Splunk SPL examples for investigation and correlation
+- Add incident response and escalation checklists
+- Add sanitized lab screenshots where safe
+- Add detection engineering notes for selected high-value cases
+
+---
+
+## Privacy and Safety Notice
+
+All tickets in this repository are sanitized and created for learning, portfolio building, and career development purposes only.
+
+This repository does **not** contain:
+
+- Real company names
+- Real client data
+- Real passwords
+- Confidential production logs
+- Internal screenshots
+- Proprietary ticket information
+- Sensitive business data
+
+Any resemblance to real environments is purely for educational demonstration.
 
 ---
 
@@ -249,7 +270,8 @@ All scenarios are sanitized and written in a safe format. No confidential compan
 ## 👤 Author
 
 **Ananda Das**
-Cybersecurity Student | SOC Analyst Learner | IT Security Enthusiast
+
+Cybersecurity Student | Cyber Security Trainer |  SOC Analyst L1
 
 GitHub: [@nothingnhm](https://github.com/nothingnhm)
 
@@ -257,4 +279,5 @@ GitHub: [@nothingnhm](https://github.com/nothingnhm)
 
 ## ⭐ Repository Purpose
 
-This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
+This project is part of my cybersecurity portfolio to demonstrate hands-on understanding of SOC alert triage, IT support investigation, SIEM log review, incident documentation, and professional ticket closure practices.
+
