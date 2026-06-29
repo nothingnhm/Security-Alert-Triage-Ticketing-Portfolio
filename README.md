@@ -1,12 +1,12 @@
 # Triage-Ticketing-Portfolio
-A professional case-study repository documenting 100+ solved IT support and cybersecurity tickets, including issue analysis, troubleshooting steps, root cause identification, resolution notes, escalation handling, and key learning outcomes.
+A professional case-study repository documenting 80+ solved IT support and cybersecurity tickets, including issue analysis, troubleshooting steps, root cause identification, resolution notes, escalation handling, and key learning outcomes.
 
 
 # SOC Ticket Triage Case Studies
 
 ## 📌 Project Overview
 
-This repository is a professional portfolio project documenting **100+ sanitized IT support and cybersecurity ticket case studies** based practical experience.
+This repository is a professional portfolio project documenting **80+ sanitized IT support and cybersecurity ticket case studies** based practical experience.
 
 The main goal of this project is to demonstrate how tickets are analyzed, triaged, investigated, resolved, documented, and escalated in a real-world IT/SOC environment.
 
@@ -227,7 +227,7 @@ After completing this project, the following skills are demonstrated:
 
 Planned improvements for this repository:
 
-* Add 100+ individual ticket case studies
+* Add 80+ individual ticket case studies
 * Add severity-wise ticket classification
 * Add sample Splunk SPL queries for investigation
 * Add MITRE ATT&CK mapping for security-related tickets
