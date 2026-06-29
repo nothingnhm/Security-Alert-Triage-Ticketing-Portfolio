@@ -4,7 +4,7 @@
 
 | Field            | Details                                                                                                       |
 | ---------------- | ------------------------------------------------------------------------------------------------------------- |
-| Ticket ID        | CS-0234                                                                                                       |
+| Ticket ID        | CS-051                                                                                                       |
 | Alert Name       | Email Gateway: Detection of Suspicious External Emails Targeting Corporate Domains                            |
 | Ticket Status    | Resolved                                                                                                      |
 | Priority / SLA   | Normal / Medium                                                                                               |
@@ -305,8 +305,31 @@ If David confirms no credentials were entered and authentication logs are clean,
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0234 — Email Gateway: Detection of Suspicious External Emails Targeting Corporate Domains**. The campaign used a Microsoft SharePoint and purchase order theme and was sent from `Microsoft Sharepoint <dariana@trangthino.cfd>`. Email gateway logs confirmed delivery to `ajay.joshi@abc.com`, `david.patel@abc.com`, and `info@abc.com`. The emails contained phishing URLs hosted on `jjjjjefta.github.io`. A related earlier SharePoint-themed suspicious email used `bird-rattle-sundial.glitch.me`. Proxy logs confirmed that **David Patel** accessed `jjjjjefta.github.io` and performed both GET and POST requests with HTTP response code 200. The POST request creates a possible credential submission risk. No successful account compromise, MFA approval, endpoint compromise, malware download, or data exfiltration was confirmed from the provided logs. Ticket closed as **True Positive — SharePoint-Themed Phishing Email with User Interaction and Possible Credential Submission**, with email quarantine, IOC blocking, David Patel user validation, password/session review, authentication log review, and conditional SOC L2/Identity Team escalation recommended if credential submission or suspicious login activity is confirmed.
+SOC investigated ticket **CS-051 — Email Gateway: Detection of Suspicious External Emails Targeting Corporate Domains**. The campaign used a Microsoft SharePoint and purchase order theme and was sent from `Microsoft Sharepoint <dariana@trangthino.cfd>`. Email gateway logs confirmed delivery to `ajay.joshi@abc.com`, `david.patel@abc.com`, and `info@abc.com`. The emails contained phishing URLs hosted on `jjjjjefta.github.io`. A related earlier SharePoint-themed suspicious email used `bird-rattle-sundial.glitch.me`. Proxy logs confirmed that **David Patel** accessed `jjjjjefta.github.io` and performed both GET and POST requests with HTTP response code 200. The POST request creates a possible credential submission risk. No successful account compromise, MFA approval, endpoint compromise, malware download, or data exfiltration was confirmed from the provided logs. Ticket closed as **True Positive — SharePoint-Themed Phishing Email with User Interaction and Possible Credential Submission**, with email quarantine, IOC blocking, David Patel user validation, password/session review, authentication log review, and conditional SOC L2/Identity Team escalation recommended if credential submission or suspicious login activity is confirmed.
 
 ## Skills Demonstrated
 
 Email gateway alert triage, suspicious external email investigation, SharePoint-themed phishing analysis, sender impersonation review, URL reputation analysis, hosted phishing infrastructure review, Splunk email log analysis, proxy log correlation, POST request interpretation, credential exposure risk assessment, IOC extraction, MITRE ATT&CK mapping, impact validation, containment planning, and conditional escalation decision-making.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
