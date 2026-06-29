@@ -4,7 +4,7 @@
 
 | Field             | Details                                                                     |
 | ----------------- | --------------------------------------------------------------------------- |
-| Ticket ID         | CS-0421                                                                     |
+| Ticket ID         | CS-059                                                                      |
 | Alert Name        | System Fault – Device Not Sending Logs to Splunk                            |
 | Incident Category | System Fault / Log Forwarding Interruption                                  |
 | Ticket Status     | Closed                                                                      |
@@ -290,8 +290,31 @@ Escalate further only if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0421 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **CiscoRouter01** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a critical network router with IP **10.0.0.1**, using Splunk index `main`, and owned by the **Network Team**. SOC validated the alert using `index=main host=CiscoRouter01` and confirmed no new logs after the last recorded timestamp **9/15/2025 8:30**. Splunk ingestion was verified as healthy, and other routers/switches continued forwarding logs successfully, confirming the issue was isolated to CiscoRouter01. The case was escalated to the Network Team for router-side logging/syslog validation. After remediation, SOC confirmed that logs resumed successfully in Splunk. Ticket closed as **Resolved — Temporary Device Log Forwarding Interruption**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
+SOC investigated ticket **CS-059 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **CiscoRouter01** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a critical network router with IP **10.0.0.1**, using Splunk index `main`, and owned by the **Network Team**. SOC validated the alert using `index=main host=CiscoRouter01` and confirmed no new logs after the last recorded timestamp **9/15/2025 8:30**. Splunk ingestion was verified as healthy, and other routers/switches continued forwarding logs successfully, confirming the issue was isolated to CiscoRouter01. The case was escalated to the Network Team for router-side logging/syslog validation. After remediation, SOC confirmed that logs resumed successfully in Splunk. Ticket closed as **Resolved — Temporary Device Log Forwarding Interruption**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
 
 ## Skills Demonstrated
 
 Splunk log validation, system fault triage, critical asset monitoring, network device log forwarding investigation, SIEM health validation, log gap analysis, infrastructure issue scoping, Network Team escalation, post-remediation verification, root cause analysis, impact assessment, closure documentation, and SOC operational monitoring.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
