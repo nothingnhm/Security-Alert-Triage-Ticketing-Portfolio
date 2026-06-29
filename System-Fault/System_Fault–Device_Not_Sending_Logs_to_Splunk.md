@@ -318,3 +318,25 @@ SOC investigated ticket **CS-0408 — System Fault: Device Not Sending Logs to S
 ## Skills Demonstrated
 
 System fault triage, Splunk log validation, WAF log monitoring, security device log forwarding investigation, SIEM health validation, log gap analysis, infrastructure issue scoping, Security Engineering escalation, post-remediation verification, root cause analysis, impact assessment, evidence limitation handling, closure documentation, and SOC operational monitoring.
+
+---
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
