@@ -4,7 +4,7 @@
 
 | Field             | Details                                                                                       |
 | ----------------- | --------------------------------------------------------------------------------------------- |
-| Ticket ID         | CS-0268                                                                                       |
+| Ticket ID         | CS-065                                                                                       |
 | Alert Name        | VPN:- Login from IP with Bad Reputation                                                       |
 | Incident Category | VPN / Suspicious Authentication                                                               |
 | Ticket Status     | Closed                                                                                        |
@@ -310,8 +310,31 @@ Escalate to **SOC L2 / Identity / Forensics** if any of the following are identi
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0268 — VPN Login from IP with Bad Reputation** for user `david.patel`. VPN logs showed repeated password authentication initiation from external source IP `45.159.112.214` toward VPN destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The activity generated MFA OTP challenges, followed by MFA failures due to incorrect OTP entries. The source IP had **50% abuse confidence** and was associated with data center / web hosting infrastructure in Iran. The affected user is a high-value IT user, increasing the risk of the event. No successful VPN session, MFA bypass, endpoint compromise, lateral movement, or data exfiltration was observed. Source IP `45.159.112.214` was blocked, credentials for `david.patel` were reset, forensic device validation was recommended, and continued monitoring was advised. Ticket closed as **True Positive — Suspicious VPN Authentication Attempt / MFA Prevented Unauthorized Access / No Confirmed Compromise**.
+SOC investigated ticket **CS-065 — VPN Login from IP with Bad Reputation** for user `david.patel`. VPN logs showed repeated password authentication initiation from external source IP `45.159.112.214` toward VPN destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The activity generated MFA OTP challenges, followed by MFA failures due to incorrect OTP entries. The source IP had **50% abuse confidence** and was associated with data center / web hosting infrastructure in Iran. The affected user is a high-value IT user, increasing the risk of the event. No successful VPN session, MFA bypass, endpoint compromise, lateral movement, or data exfiltration was observed. Source IP `45.159.112.214` was blocked, credentials for `david.patel` were reset, forensic device validation was recommended, and continued monitoring was advised. Ticket closed as **True Positive — Suspicious VPN Authentication Attempt / MFA Prevented Unauthorized Access / No Confirmed Compromise**.
 
 ## Skills Demonstrated
 
 VPN log analysis, Splunk investigation, bad-reputation IP login triage, high-value user risk assessment, authentication event review, MFA failure analysis, source IP reputation review, IOC extraction, account compromise validation, forensic escalation planning, MITRE ATT&CK mapping, containment planning, user validation, escalation decision-making, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
