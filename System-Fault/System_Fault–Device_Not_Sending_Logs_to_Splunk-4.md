@@ -4,7 +4,7 @@
 
 | Field             | Details                                                                                      |
 | ----------------- | -------------------------------------------------------------------------------------------- |
-| Ticket ID         | CS-0405                                                                                      |
+| Ticket ID         | CS-062                                                                                       |
 | Alert Name        | System Fault – Device Not Sending Logs to Splunk                                             |
 | Incident Category | System Fault / Log Forwarding Interruption                                                   |
 | Ticket Status     | Closed                                                                                       |
@@ -334,8 +334,31 @@ Escalate further only if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0405 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **WinITAD01** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a high-severity Windows Active Directory server with IP **10.0.2.20**, using Splunk index `main`, and owned by the **Wintel Team**. SOC validated the alert using `index=main hostname=WinITAD01` and confirmed no new logs after the reported last log timestamp **9/18/2025 12:24**. Splunk server health and ingestion services were verified as operational, port **9993** was active, and other endpoints continued forwarding logs successfully. The issue was confirmed as isolated to WinITAD01 and escalated to the Wintel Team for endpoint-side Splunk Universal Forwarder validation. The Wintel Team restarted the Splunk Universal Forwarder service and confirmed the system was otherwise healthy. SOC rechecked Splunk and confirmed that logs resumed successfully with real-time events received. Ticket closed as **Resolved — Splunk Universal Forwarder Service Stopped or Became Unresponsive**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
+SOC investigated ticket **CS-062 — System Fault: Device Not Sending Logs to Splunk** after automated monitoring detected that **WinITAD01** had not sent logs to Splunk for more than 60 minutes. The affected device was identified as a high-severity Windows Active Directory server with IP **10.0.2.20**, using Splunk index `main`, and owned by the **Wintel Team**. SOC validated the alert using `index=main hostname=WinITAD01` and confirmed no new logs after the reported last log timestamp **9/18/2025 12:24**. Splunk server health and ingestion services were verified as operational, port **9993** was active, and other endpoints continued forwarding logs successfully. The issue was confirmed as isolated to WinITAD01 and escalated to the Wintel Team for endpoint-side Splunk Universal Forwarder validation. The Wintel Team restarted the Splunk Universal Forwarder service and confirmed the system was otherwise healthy. SOC rechecked Splunk and confirmed that logs resumed successfully with real-time events received. Ticket closed as **Resolved — Splunk Universal Forwarder Service Stopped or Became Unresponsive**, with no evidence of Splunk infrastructure failure, network-wide outage, malicious activity, or confirmed permanent data loss.
 
 ## Skills Demonstrated
 
 System fault triage, Splunk log validation, Active Directory log monitoring, Windows Server log forwarding investigation, Splunk Universal Forwarder troubleshooting, SIEM health validation, log gap analysis, endpoint issue scoping, Wintel Team escalation, post-remediation verification, root cause analysis, impact assessment, evidence limitation handling, closure documentation, and SOC operational monitoring.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
