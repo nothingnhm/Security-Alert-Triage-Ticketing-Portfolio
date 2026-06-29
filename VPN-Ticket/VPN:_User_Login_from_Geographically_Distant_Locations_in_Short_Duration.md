@@ -4,7 +4,7 @@
 
 | Field                      | Details                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------ |
-| Ticket ID                  | CS-0275                                                                                    |
+| Ticket ID                  | CS-069                                                                                    |
 | Alert Name                 | VPN:- User Login from Geographically Distant Locations in Short Duration                   |
 | Incident Category          | VPN / Impossible Travel Indicator                                                          |
 | Ticket Status              | Closed                                                                                     |
@@ -402,8 +402,31 @@ Escalate to **SOC L2 / Identity / Endpoint Team** if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0275 — User Login from Geographically Distant Locations in Short Duration** for user `sumer.dewan`. VPN logs showed an active session from usual source IP `49.205.10.20` associated with Vijayawada, India, followed approximately 11 minutes later by a successful VPN login from source IP `89.187.160.12` associated with Tokyo, Japan. The second source IP belonged to data center / hosting / transit infrastructure and used Android device `Samsung-G991B`. Splunk evidence confirmed password authentication, MFA challenge generation, successful authentication, active VPN session with `FullAccess`, and idle timeout. No brute-force pattern, MFA failure, endpoint compromise, lateral movement, or data exfiltration was observed from the provided logs. However, the India-to-Japan login pattern within 11 minutes is suspicious and consistent with an impossible travel indicator. User validation and device compliance review were recommended. Ticket closed as **Suspicious VPN Login / Impossible Travel Indicator — User Validation Required / No Confirmed Malicious Activity from Provided Logs**.
+SOC investigated ticket **CS-069 — User Login from Geographically Distant Locations in Short Duration** for user `sumer.dewan`. VPN logs showed an active session from usual source IP `49.205.10.20` associated with Vijayawada, India, followed approximately 11 minutes later by a successful VPN login from source IP `89.187.160.12` associated with Tokyo, Japan. The second source IP belonged to data center / hosting / transit infrastructure and used Android device `Samsung-G991B`. Splunk evidence confirmed password authentication, MFA challenge generation, successful authentication, active VPN session with `FullAccess`, and idle timeout. No brute-force pattern, MFA failure, endpoint compromise, lateral movement, or data exfiltration was observed from the provided logs. However, the India-to-Japan login pattern within 11 minutes is suspicious and consistent with an impossible travel indicator. User validation and device compliance review were recommended. Ticket closed as **Suspicious VPN Login / Impossible Travel Indicator — User Validation Required / No Confirmed Malicious Activity from Provided Logs**.
 
 ## Skills Demonstrated
 
 VPN log analysis, Splunk investigation, impossible-travel alert triage, geo-location comparison, source IP reputation review, hosting infrastructure identification, authentication event validation, MFA success review, VPN session analysis, device compliance assessment, IOC extraction, user validation planning, MITRE ATT&CK reference mapping, containment decision-making, escalation criteria definition, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
