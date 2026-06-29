@@ -4,7 +4,7 @@
 
 | Field                | Details                                                                                                           |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Ticket ID            | CS-0238                                                                                                           |
+| Ticket ID            | CS-054                                                                                                           |
 | Alert Name           | Phishing Email For Analysis                                                                                       |
 | Category             | Email Phishing / Credential Harvesting                                                                            |
 | Ticket Status        | Closed                                                                                                            |
@@ -311,8 +311,31 @@ Escalate to **SOC L2 / Identity Team** if any of the following are found:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0238 — Phishing Email For Analysis** reported by **Rachel Moore**. The submitted email used the subject **URGENT: confirm account activity** and was delivered to `rahul.joshi@abc.com`, `rachel.moore@abc.com`, and `info@abc.com`. The phishing URL redirected through `secure.adnxs.com` and led to the credential-harvesting domain `maxloglogistica.com`. Proxy logs confirmed that **Rahul Joshi** accessed the phishing page using GET and generated a POST request, indicating possible credential or form submission. **Rachel Moore** accessed the phishing page using GET, but no POST activity was observed for her. VPN logs showed suspicious authentication attempts for Rahul Joshi from `186.23.212.74`, where password authentication was initiated, MFA challenge was generated, OTP was sent, and MFA failed. No successful VPN session, endpoint compromise, malware execution, lateral movement, or data exfiltration was confirmed. Ticket closed as **True Positive — Credential Harvesting Phishing with Possible Credential Submission / MFA Prevented VPN Access**, with password reset, session revocation, phishing email quarantine, IOC blocking, user awareness, and 2–3 days of monitoring recommended.
+SOC investigated ticket **CS-054 — Phishing Email For Analysis** reported by **Rachel Moore**. The submitted email used the subject **URGENT: confirm account activity** and was delivered to `rahul.joshi@abc.com`, `rachel.moore@abc.com`, and `info@abc.com`. The phishing URL redirected through `secure.adnxs.com` and led to the credential-harvesting domain `maxloglogistica.com`. Proxy logs confirmed that **Rahul Joshi** accessed the phishing page using GET and generated a POST request, indicating possible credential or form submission. **Rachel Moore** accessed the phishing page using GET, but no POST activity was observed for her. VPN logs showed suspicious authentication attempts for Rahul Joshi from `186.23.212.74`, where password authentication was initiated, MFA challenge was generated, OTP was sent, and MFA failed. No successful VPN session, endpoint compromise, malware execution, lateral movement, or data exfiltration was confirmed. Ticket closed as **True Positive — Credential Harvesting Phishing with Possible Credential Submission / MFA Prevented VPN Access**, with password reset, session revocation, phishing email quarantine, IOC blocking, user awareness, and 2–3 days of monitoring recommended.
 
 ## Skills Demonstrated
 
 User-reported phishing triage, email gateway analysis, phishing URL redirect investigation, proxy log correlation, POST request interpretation, VPN authentication review, MFA failure analysis, credential exposure assessment, IOC extraction, MITRE ATT&CK mapping, timeline reconstruction, impact validation, containment planning, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
