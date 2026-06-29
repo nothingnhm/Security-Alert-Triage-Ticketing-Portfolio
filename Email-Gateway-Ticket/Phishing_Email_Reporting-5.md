@@ -4,7 +4,7 @@
 
 | Field                | Details                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------ |
-| Ticket ID            | CS-0237                                                                                    |
+| Ticket ID            | CS-057                                                                                    |
 | Alert Name           | Phishing Email Reporting                                                                   |
 | Incident Title       | Suspicious Email — Marketing Communication                                                 |
 | Ticket Status        | Closed                                                                                     |
@@ -237,8 +237,31 @@ Current impact: **No security impact identified.**
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0237 — Phishing Email Reporting** submitted by **Meera Sharma**. The reported email was sent from `ashlyn.saju@freshworks.com` to `meera.sharma@abc.com` and `hr@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. Email authentication checks passed, including SPF, DKIM, and DMARC. Splunk email logs confirmed the messages were delivered and allowed. The email content was reviewed and identified as Freshworks marketing/promotional communication. No malicious URLs, suspicious attachments, credential harvesting behavior, proxy activity, VPN anomaly, malware execution, endpoint compromise, or user/account impact was identified. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
+SOC investigated ticket **CS-057 — Phishing Email Reporting** submitted by **Meera Sharma**. The reported email was sent from `ashlyn.saju@freshworks.com` to `meera.sharma@abc.com` and `hr@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. Email authentication checks passed, including SPF, DKIM, and DMARC. Splunk email logs confirmed the messages were delivered and allowed. The email content was reviewed and identified as Freshworks marketing/promotional communication. No malicious URLs, suspicious attachments, credential harvesting behavior, proxy activity, VPN anomaly, malware execution, endpoint compromise, or user/account impact was identified. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
 
 ## Skills Demonstrated
 
 User-reported phishing triage, email authentication review, sender reputation validation, Splunk email log analysis, marketing email classification, proxy activity validation, VPN anomaly review, IOC assessment, false positive determination, impact validation, escalation decision-making, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
