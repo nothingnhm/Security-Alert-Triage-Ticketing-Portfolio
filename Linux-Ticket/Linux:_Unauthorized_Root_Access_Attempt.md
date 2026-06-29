@@ -339,3 +339,26 @@ SOC investigated ticket **CS-079 — Unauthorized Root Access Attempt** for host
 ## Skills Demonstrated
 
 Linux log analysis, SSH root access attempt triage, Splunk investigation, `/var/log/secure` review, source IP reputation analysis, privileged account risk assessment, IOC extraction, MITRE ATT&CK mapping, SSH hardening recommendation, containment planning, escalation criteria definition, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
