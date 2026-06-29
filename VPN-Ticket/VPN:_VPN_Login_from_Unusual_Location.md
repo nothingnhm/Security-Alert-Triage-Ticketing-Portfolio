@@ -4,7 +4,7 @@
 
 | Field              | Details                                                        |
 | ------------------ | -------------------------------------------------------------- |
-| Ticket ID          | CS-0272                                                        |
+| Ticket ID          | CS-075                                                         |
 | Alert Name         | VPN:- VPN Login from Unusual Location                          |
 | Incident Category  | VPN / Unusual Location Login                                   |
 | Ticket Status      | Closed                                                         |
@@ -331,8 +331,31 @@ Escalate to **SOC L2 / Identity / Endpoint Team** only if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0272 — VPN Login from Unusual Location** for user `bhavin.kumar`. VPN logs showed authentication initiation from source IP `103.229.25.66` toward destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The user’s normal login source was identified as `203.200.5.53`. The unusual source IP had **0% abuse confidence** and originated from Nagpur, Maharashtra, India, while the normal login source was associated with Mumbai, Maharashtra, India. Splunk evidence showed MFA activity, successful authentication, VPN session start with `FullAccess`, and later idle timeout due to inactivity. One MFA failure was observed, but no blacklisted country, high-risk hosting source, brute-force pattern, endpoint compromise, lateral movement, or data exfiltration was identified. User validation was recommended to confirm legitimacy. Ticket closed as **False Positive / Benign — Unusual Location Login Reviewed / No Confirmed Malicious Activity Observed**.
+SOC investigated ticket **CS-075 — VPN Login from Unusual Location** for user `bhavin.kumar`. VPN logs showed authentication initiation from source IP `103.229.25.66` toward destination `10.0.2.12` on VPN device `IvantiVPN01` under realm `Corporate_VPN`. The user’s normal login source was identified as `203.200.5.53`. The unusual source IP had **0% abuse confidence** and originated from Nagpur, Maharashtra, India, while the normal login source was associated with Mumbai, Maharashtra, India. Splunk evidence showed MFA activity, successful authentication, VPN session start with `FullAccess`, and later idle timeout due to inactivity. One MFA failure was observed, but no blacklisted country, high-risk hosting source, brute-force pattern, endpoint compromise, lateral movement, or data exfiltration was identified. User validation was recommended to confirm legitimacy. Ticket closed as **False Positive / Benign — Unusual Location Login Reviewed / No Confirmed Malicious Activity Observed**.
 
 ## Skills Demonstrated
 
 VPN log analysis, Splunk investigation, unusual-location alert triage, source IP reputation review, location comparison, authentication event analysis, MFA event review, VPN session validation, false-positive determination, user validation planning, MITRE ATT&CK reference mapping, containment decision-making, escalation criteria definition, and SOC ticket documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
