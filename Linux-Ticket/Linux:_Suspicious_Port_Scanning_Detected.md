@@ -4,7 +4,7 @@
 
 | Field             | Details                                                            |
 | ----------------- | ------------------------------------------------------------------ |
-| Ticket ID         | CS-0352                                                            |
+| Ticket ID         | CS-083                                                             |
 | Alert Name        | Linux:- Suspicious Port Scanning Detected                          |
 | Incident Category | Linux / Port Scanning / Network Reconnaissance                     |
 | Ticket Status     | Closed                                                             |
@@ -335,7 +335,7 @@ Escalation would be required only if:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-0352 — Suspicious Port Scanning Detected** on host `LinFDWebServer04 / 10.0.11.8`. Splunk Linux logs confirmed successful execution of `nmap -sS 192.168.1.0/24` by user `Eva Johnson`, identified as a Linux Admin, from source address `10.1.0.21`. The command performed a TCP SYN scan against internal subnet `192.168.1.0/24`. No unauthorized user context, external attacker source, privilege escalation, persistence, malware execution, suspicious file modification, account creation, exploitation attempt, or data exfiltration was observed in the provided logs. The activity was assessed as authorized administrative scanning or troubleshooting activity. Ticket closed as **False Positive — Authorized Nmap Scan / No Malicious Activity Observed**.
+SOC investigated ticket **CS-083 — Suspicious Port Scanning Detected** on host `LinFDWebServer04 / 10.0.11.8`. Splunk Linux logs confirmed successful execution of `nmap -sS 192.168.1.0/24` by user `Eva Johnson`, identified as a Linux Admin, from source address `10.1.0.21`. The command performed a TCP SYN scan against internal subnet `192.168.1.0/24`. No unauthorized user context, external attacker source, privilege escalation, persistence, malware execution, suspicious file modification, account creation, exploitation attempt, or data exfiltration was observed in the provided logs. The activity was assessed as authorized administrative scanning or troubleshooting activity. Ticket closed as **False Positive — Authorized Nmap Scan / No Malicious Activity Observed**.
 
 ## Skills Demonstrated
 
