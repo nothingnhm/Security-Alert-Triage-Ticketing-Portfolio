@@ -19,7 +19,7 @@ An email gateway alert was triggered for a suspicious attachment containing embe
 
 The email was sent from:
 
-`Accounts.Avi Enterprises <accounts@avienterprise.com>`
+`Accounts.Avi Enterprises <accounts@avisdentesdfdsrprise.com>`
 
 The email was delivered to:
 
@@ -46,8 +46,8 @@ The original email file was not provided, so full header analysis, attachment ex
 | Field           | Value                                                   |
 | --------------- | ------------------------------------------------------- |
 | Timestamp       | 2025-03-05 09:46:22-08:00                               |
-| Sender          | `Accounts.Avi Enterprises <accounts@avienterprise.com>` |
-| Sender Email    | `accounts@avienterprise.com`                            |
+| Sender          | `Accounts.Avi Enterprises <accounts@avisdentesdfdsrprise.com>` |
+| Sender Email    | `accounts@avisdentesdfdsrprise.com`                            |
 | Sender Domain   | avienterprise.com                                       |
 | Recipient       | `info@abc.com`                                          |
 | Email Subject   | Due Payments Release                                    |
@@ -65,7 +65,7 @@ The original email file was not provided, so full header analysis, attachment ex
 | Asset / Entity      | Details                                               |
 | ------------------- | ----------------------------------------------------- |
 | Recipient Mailbox   | `info@abc.com`                                        |
-| Sender              | `accounts@avienterprise.com`                          |
+| Sender              | `accounts@avisdentesdfdsrprise.com`                          |
 | Sender Domain       | avienterprise.com                                     |
 | Sender IP           | 52.101.194.10                                         |
 | Attachment          | ACCOUNTS STATEMENT.xls                                |
@@ -171,7 +171,7 @@ Because the attachment name and hash differ, the original email and attachment s
 ### Email Gateway Query
 
 ```spl id="cs0249_email_query"
-index=main sourcetype="email_logs" "accounts@avienterprise.com"
+index=main sourcetype="email_logs" "accounts@avisdentesdfdsrprise.com"
 | table _time Attachment_Hash Attachment_Name Sender SenderIP Recipient Email_Subject URL Status Action
 ```
 
@@ -186,7 +186,7 @@ _time	Attachment_Hash	Attachment_Name	Sender	SenderIP	Recipient	Email_Subject	UR
 
 | Timestamp                 | Sender                                                  | Recipient      | Email Subject        | Sender IP     | Status    | Action  | Reason |
 | ------------------------- | ------------------------------------------------------- | -------------- | -------------------- | ------------- | --------- | ------- | ------ |
-| 2025-03-05 09:46:22-08:00 | Accounts.Avi Enterprises `<accounts@avienterprise.com>` | `info@abc.com` | Due Payments Release | 52.101.194.10 | Delivered | allowed | NA     |
+| 2025-03-05 09:46:22-08:00 | Accounts.Avi Enterprises `<accounts@avisdentesdfdsrprise.com>` | `info@abc.com` | Due Payments Release | 52.101.194.10 | Delivered | allowed | NA     |
 
 ### Vendor Detection Summary
 
@@ -294,7 +294,7 @@ Current impact: **Mailbox exposure confirmed. Endpoint impact not confirmed.**
 4. Request the original email file in `.eml` or `.msg` format for deeper analysis.
 5. Quarantine or remove the delivered email from the mailbox.
 6. Search all mailboxes for the same sender, subject, attachment name, and attachment hash.
-7. Block `accounts@avienterprise.com` in the email gateway if not business-required.
+7. Block `accounts@avisdentesdfdsrprise.com` in the email gateway if not business-required.
 8. Block or quarantine emails from `avienterprise.com` if no business requirement exists.
 9. Add `0c022982324f9c68037f2a3677492695` to SIEM/EDR watchlist.
 10. Add `2e971027b80cdb93379285f33ce200da6b73fc544748706d8f282234e9e6231d` to EDR/SIEM watchlist as the related malicious SHA256 sample.
@@ -343,8 +343,31 @@ If the user confirms the attachment was not opened and email removal is complete
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-048 — Email Gateway: Detection of Suspicious Embedded Macros in Attachments from External Domain**. The email was sent from external sender `accounts@avienterprise.com` to `info@abc.com` with subject **Due Payments Release**. The email gateway marked the status as **Delivered** and action as **allowed**. Splunk email logs confirmed the Excel attachment `ACCOUNTS STATEMENT.xls` with attachment hash `0c022982324f9c68037f2a3677492695`. Additional file reputation evidence showed a related Excel sample flagged by **26/54 security vendors** as malicious, with detections related to Trojan, downloader, suspicious OLE content, Office exploit behavior, and **CVE-2017-0199**. The original email file was not provided, so full header analysis, macro review, sandbox detonation, and exact attachment verification could not be completed. Ticket closed as **True Positive — Suspicious/Malicious Office Attachment Delivered / User Interaction Validation Required**, with email quarantine, sender/domain blocking, hash-based hunting, user validation, endpoint review, and conditional SOC L2 escalation recommended if the attachment was opened or endpoint compromise indicators are found.
+SOC investigated ticket **CS-048 — Email Gateway: Detection of Suspicious Embedded Macros in Attachments from External Domain**. The email was sent from external sender `accounts@avisdentesdfdsrprise.com` to `info@abc.com` with subject **Due Payments Release**. The email gateway marked the status as **Delivered** and action as **allowed**. Splunk email logs confirmed the Excel attachment `ACCOUNTS STATEMENT.xls` with attachment hash `0c022982324f9c68037f2a3677492695`. Additional file reputation evidence showed a related Excel sample flagged by **26/54 security vendors** as malicious, with detections related to Trojan, downloader, suspicious OLE content, Office exploit behavior, and **CVE-2017-0199**. The original email file was not provided, so full header analysis, macro review, sandbox detonation, and exact attachment verification could not be completed. Ticket closed as **True Positive — Suspicious/Malicious Office Attachment Delivered / User Interaction Validation Required**, with email quarantine, sender/domain blocking, hash-based hunting, user validation, endpoint review, and conditional SOC L2 escalation recommended if the attachment was opened or endpoint compromise indicators are found.
 
 ## Skills Demonstrated
 
 Email gateway alert triage, suspicious attachment investigation, macro-enabled Office document analysis, malicious file reputation review, IOC extraction, Splunk email log analysis, evidence limitation handling, user validation planning, endpoint investigation planning, MITRE ATT&CK mapping, impact validation, containment planning, escalation decision-making, and SOC incident documentation.
+
+---
+
+## ⚠️ Disclaimer
+
+This repository is created for educational, portfolio, and career development purposes only.
+
+All scenarios are sanitized and written in a safe format. No confidential company information, client data, or real production logs are included.
+
+---
+
+## 👤 Author
+
+**Ananda Das**
+Cybersecurity Student | SOC Analyst Learner | SIEM, Threat Detection & Incident Response Enthusiast
+
+GitHub: [@nothingnhm](https://github.com/nothingnhm)
+
+---
+
+## ⭐ Repository Purpose
+
+This project is part of my cybersecurity portfolio to demonstrate practical experience in ticket triage, IT troubleshooting, SOC alert analysis, and professional documentation.
