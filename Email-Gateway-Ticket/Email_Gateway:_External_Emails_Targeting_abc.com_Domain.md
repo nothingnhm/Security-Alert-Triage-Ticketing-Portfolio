@@ -20,7 +20,7 @@ An email gateway alert was triggered for an external email targeting the **abc.c
 
 The email was sent from:
 
-`postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com`
+`postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com`
 
 The email was delivered to:
 
@@ -44,7 +44,7 @@ No proxy click logs, endpoint alerts, credential submission evidence, suspicious
 | ------------------- | ------------------------------------------------------------------ |
 | Timestamp           | 2025-01-07 17:45:14-08:00                                          |
 | Sender Display Name | `abc.com Administration`                                           |
-| Sender Email        | `postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com` |
+| Sender Email        | `postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com` |
 | Sender Domain       | hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com              |
 | Recipient           | `info@abc.com`                                                     |
 | Email Subject       | `MailBox Requesting Authentication! For info@abc.com`              |
@@ -52,7 +52,7 @@ No proxy click logs, endpoint alerts, credential submission evidence, suspicious
 | Status              | Delivered                                                          |
 | Action              | allowed                                                            |
 | Reason              | NA                                                                 |
-| Message ID          | `<20250107174514.1F1F56C50C1FA920@solosin.com>`                    |
+| Message ID          | `<20250107174514.1F1F5sdnfskdn@sololevel.com>`                     |
 | URL Detection Ratio | 14/92 security vendors flagged malicious/phishing                  |
 
 ## Affected Assets
@@ -61,7 +61,7 @@ No proxy click logs, endpoint alerts, credential submission evidence, suspicious
 | --------------------- | -------------------------------------------------------------------------- |
 | Targeted Mailbox      | `info@abc.com`                                                             |
 | Impersonated Entity   | `abc.com Administration`                                                   |
-| Sender Email          | `postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com`         |
+| Sender Email          | `postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com`         |
 | Sender IP             | 52.101.194.10                                                              |
 | Phishing Domain       | bafybeietpey3dhxq55w6cxjunu6pb2jpjslmcmauy2dxbrwbep3oxsgfpq.ipfs.dweb.link |
 | Endpoint              | Not Provided                                                               |
@@ -75,7 +75,7 @@ No proxy click logs, endpoint alerts, credential submission evidence, suspicious
 
 | IOC Type             | Indicator                                                                                                              |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Sender Email         | `postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com`                                                     |
+| Sender Email         | `postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com`                                                     |
 | Sender Domain        | `hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com`                                                                |
 | Sender IP            | `52.101.194.10`                                                                                                        |
 | Recipient            | `info@abc.com`                                                                                                         |
@@ -83,7 +83,7 @@ No proxy click logs, endpoint alerts, credential submission evidence, suspicious
 | Phishing URL         | `https://bafybeietpey3dhxq55w6cxjunu6pb2jpjslmcmauy2dxbrwbep3oxsgfpq.ipfs.dweb.link/?filename=vback.html#info@abc.com` |
 | URL Without Fragment | `https://bafybeietpey3dhxq55w6cxjunu6pb2jpjslmcmauy2dxbrwbep3oxsgfpq.ipfs.dweb.link/?filename=vback.html`              |
 | Phishing Domain      | `bafybeietpey3dhxq55w6cxjunu6pb2jpjslmcmauy2dxbrwbep3oxsgfpq.ipfs.dweb.link`                                           |
-| Message ID           | `<20250107174514.1F1F56C50C1FA920@solosin.com>`                                                                        |
+| Message ID           | `<20250107174514.1F1F5sdnfskdn@sololevel.com>`                                                                        |
 
 ### Sender IP Reputation
 
@@ -138,7 +138,7 @@ The subject **MailBox Requesting Authentication! For [info@abc.com](mailto:info@
 
 The display name attempted to impersonate the internal domain administration team, while the actual sender address was external:
 
-`postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com`
+`postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com`
 
 This mismatch between the display name and sender domain is a strong phishing indicator.
 
@@ -165,7 +165,7 @@ The correct conclusion is:
 ### Email Gateway Query
 
 ```spl id="cs0248_email_query"
-index=main sourcetype="email_logs" "postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com"
+index=main sourcetype="email_logs" "postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com"
 | table Sender SenderIP Recipient Email_Subject URL Status Action MessageID
 ```
 
@@ -173,14 +173,14 @@ index=main sourcetype="email_logs" "postmaster@hdr-nlb7-aebd5d615260636b.elb.us-
 
 ```text id="cs0248_email_result"
 Sender	SenderIP	Recipient	Email_Subject	URL	Status	Action	MessageID
-"abc.com  Administration"  <postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com>	52.101.194.10	info@abc.com	MailBox Requesting Authentication! For info@abc.com	https://bafybeietpey3dhxq55w6cxjunu6pb2jpjslmcmauy2dxbrwbep3oxsgfpq.ipfs.dweb.link/?filename=vback.html#info@abc.com"	Delivered	allowed	<20250107174514.1F1F56C50C1FA920@solosin.com>
+"abc.com  Administration"  <postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com>	52.101.194.10	info@abc.com	MailBox Requesting Authentication! For info@abc.com	https://bafybeietpey3dhxq55w6cxjunu6pb2jpjslmcmauy2dxbrwbep3oxsgfpq.ipfs.dweb.link/?filename=vback.html#info@abc.com"	Delivered	allowed	<20250107174514.1F1F5sdnfskdn@sololevel.com>
 ```
 
 ### Initial Email Gateway Alert Evidence
 
 | Timestamp                 | Sender                                                                                        | Recipient      | Email Subject                                         | Sender IP     | Status    | Action  | Reason |
 | ------------------------- | --------------------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------- | ------------- | --------- | ------- | ------ |
-| 2025-01-07 17:45:14-08:00 | `"abc.com Administration" <postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com>` | `info@abc.com` | `MailBox Requesting Authentication! For info@abc.com` | 52.101.194.10 | Delivered | allowed | NA     |
+| 2025-01-07 17:45:14-08:00 | `"abc.com Administration" <postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com>` | `info@abc.com` | `MailBox Requesting Authentication! For info@abc.com` | 52.101.194.10 | Delivered | allowed | NA     |
 
 ### Security Vendor Detection Summary
 
@@ -269,7 +269,7 @@ Current impact: **Phishing email delivery confirmed. User compromise not confirm
 2. Search all mailboxes for the same sender, subject, URL, and Message ID.
 3. Block the phishing URL in the email gateway.
 4. Block the IPFS phishing domain in proxy/SWG and DNS security controls.
-5. Block sender email `postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com` if not business-required.
+5. Block sender email `postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com` if not business-required.
 6. Block sender domain `hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com` if not business-required.
 7. Block sender IP `52.101.194.10` only if policy approves and no business impact exists.
 8. Review proxy logs to confirm whether the phishing URL was clicked.
@@ -298,7 +298,7 @@ Escalate to **SOC L2 / Identity Team** if any of the following are identified:
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-049 — Email Gateway: External Emails Targeting abc.com Domain**. The email impersonated `abc.com Administration` and was sent from external sender `postmaster@hdr-nlb7-aebd5d615260636b.elb.us-east-1.amazonaws.com` to `info@abc.com`. The subject was `MailBox Requesting Authentication! For info@abc.com`. Email gateway logs confirmed the message was **Delivered** and **allowed**. The email contained an IPFS-hosted phishing URL that included the target mailbox in the URL fragment and was flagged by **14/92 security vendors** as malicious/phishing. No proxy click logs, credential submission evidence, suspicious authentication activity, endpoint compromise, or data exfiltration was provided. Ticket closed as **True Positive — Phishing Email Delivered / No Confirmed User Compromise**, with email quarantine, IOC blocking, mailbox-wide hunting, proxy/authentication review, and conditional credential reset recommended only if click activity or suspicious authentication is confirmed.
+SOC investigated ticket **CS-049 — Email Gateway: External Emails Targeting abc.com Domain**. The email impersonated `abc.com Administration` and was sent from external sender `postmaster@hdr-nlb7-aebd5d615.jsddbfsjdb.amazonaws.com` to `info@abc.com`. The subject was `MailBox Requesting Authentication! For info@abc.com`. Email gateway logs confirmed the message was **Delivered** and **allowed**. The email contained an IPFS-hosted phishing URL that included the target mailbox in the URL fragment and was flagged by **14/92 security vendors** as malicious/phishing. No proxy click logs, credential submission evidence, suspicious authentication activity, endpoint compromise, or data exfiltration was provided. Ticket closed as **True Positive — Phishing Email Delivered / No Confirmed User Compromise**, with email quarantine, IOC blocking, mailbox-wide hunting, proxy/authentication review, and conditional credential reset recommended only if click activity or suspicious authentication is confirmed.
 
 ## Skills Demonstrated
 
