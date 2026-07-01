@@ -22,7 +22,7 @@ User **Meera Sharma** reported a suspicious email for analysis. The attached ema
 
 The email was sent from:
 
-`ashlyn.saju@freshworks.com`
+`ashl.hacker@works.com`
 
 The sender domain was:
 
@@ -45,7 +45,7 @@ Based on the investigation, this ticket is assessed as a **False Positive — Le
 | ------------------ | ----------------------------------------------------------------- |
 | Email Time         | 2025-03-03 23:56:00                                               |
 | Sender Name        | Ashlyn Saju                                                       |
-| Sender Email       | `ashlyn.saju@freshworks.com`                                      |
+| Sender Email       | `ashl.hacker@works.com`                                      |
 | Sender Domain      | freshworks.com                                                    |
 | Recipients         | `meera.sharma@abc.com`, `hr@abc.com`                              |
 | Email Subject      | Still Searching for the Perfect AI-Powered Customer Support Tool? |
@@ -64,7 +64,7 @@ Based on the investigation, this ticket is assessed as a **False Positive — Le
 | Reporter Email  | `meera.sharma@abc.com`       |
 | Recipient 1     | `meera.sharma@abc.com`       |
 | Recipient 2     | `hr@abc.com`                 |
-| Sender          | `ashlyn.saju@freshworks.com` |
+| Sender          | `ashl.hacker@works.com` |
 | Sender Domain   | freshworks.com               |
 | Sender IP       | 148.113.46.138               |
 | System          | Email Infrastructure         |
@@ -78,7 +78,7 @@ Based on the investigation, this ticket is assessed as a **False Positive — Le
 
 | Indicator Type | Indicator                                                         | Classification                  | Status                        |
 | -------------- | ----------------------------------------------------------------- | ------------------------------- | ----------------------------- |
-| Sender Email   | `ashlyn.saju@freshworks.com`                                      | Legitimate Sender               | Benign                        |
+| Sender Email   | `ashl.hacker@works.com`                                      | Legitimate Sender               | Benign                        |
 | Sender Domain  | freshworks.com                                                    | Trusted SaaS / Marketing Domain | Benign                        |
 | Sender IP      | 148.113.46.138                                                    | Email Infrastructure            | Benign from provided evidence |
 | Recipient      | `meera.sharma@abc.com`                                            | Internal Recipient              | No impact observed            |
@@ -136,14 +136,14 @@ The delivery pattern was consistent with marketing communication and did not sho
 #### 4. Splunk Email Log Review
 
 ```spl id="cs0237_email_query"
-index=main sourcetype="email_logs" "ashlyn.saju@freshworks.com"
+index=main sourcetype="email_logs" "ashl.hacker@works.com"
 | table _time Sender Recipient Email_Subject MessageID Action
 ```
 
 ```text id="cs0237_email_results"
 _time	Sender	Recipient	Email_Subject	Action
-2025-03-03 23:56:00	ashlyn.saju@freshworks.com	meera.sharma@abc.com	AI Support Tool Marketing	Allowed
-2025-03-03 23:56:00	ashlyn.saju@freshworks.com	hr@abc.com	AI Support Tool Marketing	Allowed
+2025-03-03 23:56:00	ashl.hacker@works.com	meera.sharma@abc.com	AI Support Tool Marketing	Allowed
+2025-03-03 23:56:00	ashl.hacker@works.com	hr@abc.com	AI Support Tool Marketing	Allowed
 ```
 
 #### 5. Content and Attachment Review
@@ -237,7 +237,7 @@ Current impact: **No security impact identified.**
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-057 — Phishing Email Reporting** submitted by **Meera Sharma**. The reported email was sent from `ashlyn.saju@freshworks.com` to `meera.sharma@abc.com` and `hr@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. Email authentication checks passed, including SPF, DKIM, and DMARC. Splunk email logs confirmed the messages were delivered and allowed. The email content was reviewed and identified as Freshworks marketing/promotional communication. No malicious URLs, suspicious attachments, credential harvesting behavior, proxy activity, VPN anomaly, malware execution, endpoint compromise, or user/account impact was identified. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
+SOC investigated ticket **CS-057 — Phishing Email Reporting** submitted by **Meera Sharma**. The reported email was sent from `ashl.hacker@works.com` to `meera.sharma@abc.com` and `hr@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. Email authentication checks passed, including SPF, DKIM, and DMARC. Splunk email logs confirmed the messages were delivered and allowed. The email content was reviewed and identified as Freshworks marketing/promotional communication. No malicious URLs, suspicious attachments, credential harvesting behavior, proxy activity, VPN anomaly, malware execution, endpoint compromise, or user/account impact was identified. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
 
 ## Skills Demonstrated
 
