@@ -51,7 +51,7 @@ No endpoint compromise, malware execution, lateral movement, or data exfiltratio
 | Field                        | Value                                  |
 | ---------------------------- | -------------------------------------- |
 | Email Subject                | `URGENT: confirm account activity`     |
-| Sender                       | `cybersecxperts@zimbramail.serino.com` |
+| Sender                       | `abc@zimbramail.serino.com` |
 | Sender Domain                | zimbramail.serino.com                  |
 | Sender IP                    | 5.62.56.113                            |
 | Delivery Status              | Delivered                              |
@@ -77,7 +77,7 @@ No endpoint compromise, malware execution, lateral movement, or data exfiltratio
 
 | IOC Type                     | Indicator                              |
 | ---------------------------- | -------------------------------------- |
-| Sender Email                 | `cybersecxperts@zimbramail.serino.com` |
+| Sender Email                 | `abc@zimbramail.serino.com` |
 | Sender Domain                | zimbramail.serino.com                  |
 | Sender IP                    | 5.62.56.113                            |
 | Redirect Domain              | secure.adnxs.com                       |
@@ -122,9 +122,9 @@ index="main" "zimbramail.serino.com" sourcetype=email_logs
 
 ```text id="cs0238_email_results"
 _time	Sender	Recipient	Status
-2025-02-24 10:39:00	Cybersecxperts cybersecxperts@zimbramail.serino.com	rahul.joshi@abc.com	Delivered
-2025-02-24 10:39:00	Cybersecxperts cybersecxperts@zimbramail.serino.com	rachel.moore@abc.com	Delivered
-2025-02-24 10:39:00	Cybersecxperts cybersecxperts@zimbramail.serino.com	info@abc.com	Delivered
+2025-02-24 10:39:00	abc abc@zimbramail.serino.com	rahul.joshi@abc.com	Delivered
+2025-02-24 10:39:00	abc abc@zimbramail.serino.com	rachel.moore@abc.com	Delivered
+2025-02-24 10:39:00	abc abc@zimbramail.serino.com	info@abc.com	Delivered
 ```
 
 ### Email Gateway Findings
