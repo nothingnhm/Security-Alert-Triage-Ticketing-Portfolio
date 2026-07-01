@@ -21,7 +21,7 @@ User **Karthik Gupta** reported a suspicious email for analysis. The email was r
 
 The reported email was sent by:
 
-`ashlyn.saju@freshworks.com`
+`ashl.hacker@works.com`
 
 The subject was:
 
@@ -46,7 +46,7 @@ No malicious attachment, phishing page, credential harvesting page, malware deli
 | ------------------ | ----------------------------------------------------------------- |
 | Email Time         | 2025-03-03 23:56:00                                               |
 | Sender Name        | Ashlyn Saju                                                       |
-| Sender Email       | `ashlyn.saju@freshworks.com`                                      |
+| Sender Email       | `ashl.hacker@works.com`                                      |
 | Sender Domain      | freshworks.com                                                    |
 | Recipients         | `hr@abc.com`, `meera.sharma@abc.com`                              |
 | Subject            | Still Searching for the Perfect AI-Powered Customer Support Tool? |
@@ -67,7 +67,7 @@ No malicious attachment, phishing page, credential harvesting page, malware deli
 | Reporter Email            | `karthik.gupta@abc.com`                   |
 | Recipient 1               | `hr@abc.com`                              |
 | Recipient 2               | `meera.sharma@abc.com`                    |
-| Sender                    | `ashlyn.saju@freshworks.com`              |
+| Sender                    | `ashl.hacker@works.com`              |
 | Sender Domain             | freshworks.com                            |
 | Tracking Domain           | fwtrackinte.freshworks.com                |
 | Final URL                 | `https://calendly.com/ashlyn-saju-/30min` |
@@ -81,7 +81,7 @@ No malicious attachment, phishing page, credential harvesting page, malware deli
 
 | Indicator Type  | Indicator                                                         | Classification                     | Status             |
 | --------------- | ----------------------------------------------------------------- | ---------------------------------- | ------------------ |
-| Sender Email    | `ashlyn.saju@freshworks.com`                                      | Legitimate marketing sender        | Benign             |
+| Sender Email    | `ashl.hacker@works.com`                                      | Legitimate marketing sender        | Benign             |
 | Sender Domain   | freshworks.com                                                    | SaaS / marketing platform          | Benign             |
 | Tracking Domain | fwtrackinte.freshworks.com                                        | Freshworks tracking infrastructure | Benign             |
 | Effective URL   | `https://calendly.com/ashlyn-saju-/30min`                         | Calendly scheduling page           | Benign             |
@@ -158,7 +158,7 @@ The email content promoted AI-powered customer support solutions and encouraged 
 #### 5. Email Log Review
 
 ```spl id="cs0236_email_query"
-index=main "ashlyn.saju@freshworks.com" sourcetype=email_logs
+index=main "ashl.hacker@works.com" sourcetype=email_logs
 | table _time Sender Recipient Status URL Attachment_Name Email_Subject MessageID
 ```
 
@@ -166,8 +166,8 @@ index=main "ashlyn.saju@freshworks.com" sourcetype=email_logs
 
 ```text id="cs0236_email_results"
 _time	Sender	Recipient	Status	Email_Subject
-2025-03-03 23:56:00	ashlyn.saju@freshworks.com	meera.sharma@abc.com	Delivered	Still Searching for the Perfect AI-Powered Customer Support Tool?
-2025-03-03 23:56:00	ashlyn.saju@freshworks.com	hr@abc.com	Delivered	Still Searching for the Perfect AI-Powered Customer Support Tool?
+2025-03-03 23:56:00	ashl.hacker@works.com	meera.sharma@abc.com	Delivered	Still Searching for the Perfect AI-Powered Customer Support Tool?
+2025-03-03 23:56:00	ashl.hacker@works.com	hr@abc.com	Delivered	Still Searching for the Perfect AI-Powered Customer Support Tool?
 ```
 
 #### 6. Proxy Log Review
@@ -250,7 +250,7 @@ Current impact: **No security impact identified.**
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-056 — Phishing Email Reporting** submitted by **Karthik Gupta**. The reported email was sent from `ashlyn.saju@freshworks.com` to `hr@abc.com` and `meera.sharma@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. The email contained Freshworks tracking links that redirected to a legitimate Calendly scheduling page at `https://calendly.com/ashlyn-saju-/30min`. SPF and DMARC passed. DKIM failed due to body hash verification mismatch, but no malicious indicators were identified. No attachments were present, no phishing page or credential harvesting behavior was observed, and no proxy click activity, endpoint compromise, malware delivery, or account compromise was found. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
+SOC investigated ticket **CS-056 — Phishing Email Reporting** submitted by **Karthik Gupta**. The reported email was sent from `ashl.hacker@works.com` to `hr@abc.com` and `meera.sharma@abc.com` with the subject **Still Searching for the Perfect AI-Powered Customer Support Tool?**. The email contained Freshworks tracking links that redirected to a legitimate Calendly scheduling page at `https://calendly.com/ashlyn-saju-/30min`. SPF and DMARC passed. DKIM failed due to body hash verification mismatch, but no malicious indicators were identified. No attachments were present, no phishing page or credential harvesting behavior was observed, and no proxy click activity, endpoint compromise, malware delivery, or account compromise was found. Ticket closed as **False Positive — Legitimate Marketing Email / No Security Threat Identified**.
 
 ---
 
