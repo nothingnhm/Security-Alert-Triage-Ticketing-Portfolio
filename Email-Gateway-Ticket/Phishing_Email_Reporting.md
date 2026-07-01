@@ -22,7 +22,7 @@ A phishing email alert was reported by **Sneha Rathod**. The email used a financ
 
 The suspicious email appeared to come from:
 
-`No Reply Via Xerox Scanner <rebecca@princetonmercer.org>`
+`No Reply Via Xerox Scanner <reb@tonmercer.org>`
 
 The subject was:
 
@@ -39,7 +39,7 @@ This case is assessed as a **True Positive phishing campaign with possible crede
 | Field                   | Value                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------ |
 | Email Time              | 2025-01-29 04:13                                                               |
-| Sender                  | `rebecca@princetonmercer.org`                                                  |
+| Sender                  | `reb@tonmercer.org`                                                  |
 | Display Name            | No Reply Via Xerox Scanner                                                     |
 | Receiver                | Multiple Users                                                                 |
 | Subject                 | `Distribution Remittance 84,300.09 Process_Ref.3hdhbsnn34n24jszmfbshn4vahdeh4` |
@@ -75,7 +75,7 @@ This case is assessed as a **True Positive phishing campaign with possible crede
 | Phishing URL            | `hxxps://princetonmercerregionalchamberofcommerce.growthzoneapp.com/ap/Form/FillV2/pV28jf5p?cid=r6ZXwEbr`  |
 | Email Log URL           | `https://princetonmercerregionalchamberofcommerce.growthzoneapp.com/ap/r/99a0a6caa8a74d3b9e2e07ecc4ce9bf1` |
 | Domain                  | growthzoneapp.com                                                                                          |
-| Email Sender            | `rebecca@princetonmercer.org`                                                                              |
+| Email Sender            | `reb@tonmercer.org`                                                                              |
 | Email Domain            | princetonmercer.org                                                                                        |
 | Return Path Domain      | princetonmercerregionalchamberofcommerce.growthzoneapp.com                                                 |
 | Email Sender IP         | 52.101.10.18                                                                                               |
@@ -94,7 +94,7 @@ index=main "princetonmercer.org" sourcetype=email_logs
 
 ```text id="cs0586_email_results"
 _time	Email_Subject	Sender	SenderIP	URL	Status	Action
-2025-01-29 04:13:00	Distribution Remittance 84,300.09 Process_Ref.3hdhbsnn34n24jszmfbshn4vahdeh4	No Reply Via Xerox Scanner <rebecca@princetonmercer.org>	52.101.10.18	https://princetonmercerregionalchamberofcommerce.growthzoneapp.com/ap/r/99a0a6caa8a74d3b9e2e07ecc4ce9bf1	Delivered	Allowed
+2025-01-29 04:13:00	Distribution Remittance 84,300.09 Process_Ref.3hdhbsnn34n24jszmfbshn4vahdeh4	No Reply Via Xerox Scanner <reb@tonmercer.org>	52.101.10.18	https://princetonmercerregionalchamberofcommerce.growthzoneapp.com/ap/r/99a0a6caa8a74d3b9e2e07ecc4ce9bf1	Delivered	Allowed
 ```
 
 **Evidence Note:** Multiple identical email log entries were provided. Exact duplicate rows were removed, and the unique evidence row was preserved.
@@ -287,7 +287,7 @@ MFA prevented successful VPN access, but possible credential exposure cannot be 
 
 | Control              | Indicator                          | Recommended Action                                   |
 | -------------------- | ---------------------------------- | ---------------------------------------------------- |
-| Email Gateway        | `rebecca@princetonmercer.org`      | Quarantine/block if not business-required            |
+| Email Gateway        | `reb@tonmercer.org`      | Quarantine/block if not business-required            |
 | Email Gateway        | `princetonmercer.org`              | Add to watchlist; block only if policy approves      |
 | Email Gateway        | GrowthZoneApp phishing URL paths   | Block/quarantine                                     |
 | Proxy / SWG          | GrowthZoneApp phishing URL path    | Block                                                |
@@ -308,7 +308,7 @@ MFA prevented successful VPN access, but possible credential exposure cannot be 
 
 ## Final Ticket Closure Comment
 
-SOC investigated ticket **CS-046 — Phishing Email**. The phishing email was reported by **Sneha Rathod** and used a remittance-themed subject. The email was sent from `rebecca@princetonmercer.org` with display name **No Reply Via Xerox Scanner** and contained a GrowthZoneApp URL. Email authentication checks showed SPF, DKIM, and DMARC passed; however, proxy logs confirmed multiple users accessed **growthzoneapp.com**, and POST requests were observed for **Brian Lee**, **Rakesh Chauhan**, and **Sneha Khanna**. VPN logs then showed suspicious authentication attempts from **185.7.214.37**, with MFA challenges initiated and failed due to incorrect OTP entries. No successful VPN session, malware download, endpoint compromise, or data exfiltration was confirmed. The incident is assessed as **True Positive — Phishing Campaign with Possible Credential Harvesting / MFA-Protected VPN Attempts Blocked**. Recommended containment includes endpoint isolation, password resets, session revocation, phishing email quarantine, URL/domain path blocking, and firewall/IPS/VPN blocking for identified malicious IPs.
+SOC investigated ticket **CS-046 — Phishing Email**. The phishing email was reported by **Sneha Rathod** and used a remittance-themed subject. The email was sent from `reb@tonmercer.org` with display name **No Reply Via Xerox Scanner** and contained a GrowthZoneApp URL. Email authentication checks showed SPF, DKIM, and DMARC passed; however, proxy logs confirmed multiple users accessed **growthzoneapp.com**, and POST requests were observed for **Brian Lee**, **Rakesh Chauhan**, and **Sneha Khanna**. VPN logs then showed suspicious authentication attempts from **185.7.214.37**, with MFA challenges initiated and failed due to incorrect OTP entries. No successful VPN session, malware download, endpoint compromise, or data exfiltration was confirmed. The incident is assessed as **True Positive — Phishing Campaign with Possible Credential Harvesting / MFA-Protected VPN Attempts Blocked**. Recommended containment includes endpoint isolation, password resets, session revocation, phishing email quarantine, URL/domain path blocking, and firewall/IPS/VPN blocking for identified malicious IPs.
 
 ## Skills Demonstrated
 
